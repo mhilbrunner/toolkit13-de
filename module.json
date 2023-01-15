@@ -1,0 +1,65 @@
+{
+  "id": "toolkit13-de",
+  "title": "Toolkit13 (13th Age Compatible) German Translation (Deutsch)",
+  "description": "German translation for the Toolkit13 (13th Age compatible) system",
+  "authors": [
+    {
+      "name": "mhilbrunner",
+      "url": "https://github.com/mhilbrunner"
+    }
+  ],
+  "url": "https://github.com/mhilbrunner/toolkit13-de",
+  "bugs": "https://github.com/mhilbrunner/toolkit13-de/issues",
+  "readme": "https://github.com/mhilbrunner/toolkit13-de/README.md",
+  "manifest": "https://github.com/mhilbrunner/toolkit13-de/releases/latest/download/module.json",
+  "download": "https://github.com/mhilbrunner/toolkit13-de/releases/download/0.1/module.zip",
+  "version": "0.1",
+  "compatibility": {
+    "minimum": "10",
+    "verified": "10"
+  },
+  "esmodules": [
+    "toolkit13-de.js"
+  ],
+  "languages": [
+    {
+      "lang": "de",
+      "name": "Deutsch",
+      "path": "languages/de.json"
+    }
+  ],
+  "packs": [],
+  "relationships": {
+    "systems": [
+      {
+        "id": "archmage",
+        "type": "system",
+        "manifest": "https://gitlab.com/asacolips-projects/foundry-mods/archmage/-/raw/1.24.1/system.json",
+        "compatibility": {
+          "minimum": "1.24.1",
+          "verified": "1.24.1"
+        }
+      }
+    ],
+    "requires": [
+      {
+        "id": "babele",
+        "type": "module",
+        "manifest": "https://gitlab.com/riccisi/foundryvtt-babele/raw/master/module/module.json",
+        "compatibility": {
+          "minimum": "2.3.3",
+          "verified": "2.3.3"
+        }
+      },
+      {
+        "id": "lang-de",
+        "type": "module",
+        "manifest": "https://gitlab.com/henry4k/foundryvtt-lang-de/-/raw/master/module.json",
+        "compatibility": {
+          "minimum": "10.288",
+          "verified": "10.288"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,595 @@
+ARCHMAGE:
+  abilities: Attribute
+  abilityName: Attributsname
+  act: Akt.
+  action: Aktion
+  actions: Aktionen
+  add: Neu
+  at-will: Beliebig
+  attack: Angriff
+  attackMod: Angriffsmodifikator
+  attributes: Attribute
+  avatarAlt: Charakterprofilbild
+  backgrounds: Hintergründe
+  baseAC: Grund-RK
+  baseHP: Grund-TP
+  baseMD: Grund-GW
+  basePD: Grund-KW
+  baseRecoveries: Grund-Erholungen
+  biography: Biographie
+  bonus: Bonus
+  bonuses: Boni
+  byAction: Gruppieren danach, ob die Kraft eine Aktion hat oder nicht
+  byGroup: Gruppieren nach manuellem Kraft-Gruppenwert
+  byType: Gruppieren nach Krafttyp
+  calculateHP: Max. TP berechnen?
+  calculateRecoveries: Max. Erholungen berechnen?
+  chakra: Chakra
+  class: Klasse
+  conflicted: Zwiespältig
+  #create: Create
+  critModAtk: Krit.-Modifikator (Angriff)
+  critModDef: Krit.-Modifikator (Verteidigung)
+  daily: Täglich
+  defenses: Widerstände
+  description: Beschreibung
+  details: Details
+  disengageAdjustment: Loslösen-Anpassung
+  edit: Edit.
+  effects: Effekte
+  equipment: Ausrüstung
+  equipmentName: Ausrüstungsname
+  feat: Fähigkeit
+  feats: Fähigkeiten
+  feature: Merkmal
+  features: Merkmale
+  filter: Filter
+  filterName: Filter nach Name
+  #flavor: Flavor
+  flexible: Flexibler Angriff
+  flexibles: Flexible Angriffe
+  free: Freie Aktion
+  groupBy: Gruppieren nach
+  health: Gesundheit
+  hit: Treffer
+  hitPoints: Trefferpunkte
+  iconRelationships: Ikonen-Beziehungen
+  import: Kräfte importieren
+  incrementalAdvances: Schrittweise Verbesserungen
+  #incrementals: Incrementals
+  initAdjustment: Initiative-Anpassung
+  initiative: Initiative
+  interrupt: Unterbrechungsaktion
+  inventory: Inventar
+  #item: 'Item'
+  #jabWeaponDice: JAB Weapon Dice
+  #keyMod: Key Modifier
+  #keyReduced: Reduced to {mod} due to {kmod1}/{kmod2} key modifier
+  #kickWeaponDice: KICK Weapon Dice
+  #kin: Kin
+  level: Stufe
+  loot: Beute
+  lvl: Stu
+  magicItems: Magische Gegenstände
+  maneuver: Manöver
+  maneuvers: Manöver
+  melee: Nahkampf
+  #meleeAbility: Melee Ability
+  #meleeDamageAbility: Melee Damage Ability
+  #meleeMiss: Melee Miss Dmg.
+  meleeWeaponDice: Nahkampfwaffen-Würfel
+  misc: Sonst.
+  miscellaneous: Sonstige
+  miss: Fehlschlag
+  #mod: Mod
+  modifyLevel: Stufe ändern
+  move: Bewegungsaktion
+  name: Name
+  nastierSpecial: Fiesere Spezialfähigkeit
+  nastierSpecials: Fiesere Spezialfähigkeiten
+  negative: Negativ
+  once-per-battle: Pro Kampf
+  oneUniqueThing: Einzigartiges Merkmal
+  other: Andere
+  others: Andere
+  positive: Positiv
+  power: Kraft
+  powerName: Kraftname
+  powers: Kräfte
+  #punchWeaponDice: PUNCH Weapon Dice
+  quantity: Menge
+  quick: Schnelle Aktion
+  race: Volk
+  #ranged: Ranged
+  #rangedAbility: Ranged Ability
+  #rangedDamageAbility: Ranged Damage Ability
+  #rangedMiss: Ranged Miss Dmg.
+  #rangedWeaponDice: Ranged Weapon Dice
+  rchg: Aufl.
+  recharge: Aufladen
+  recoveries: Erholungen
+  recoveryDice: Erholungswürfel
+  resistance: Resistenz
+  role: Rolle
+  saves: Rettungswurf
+  size: Größe
+  sort: Sortieren
+  #specialTraits: Special Traits
+  spell: Zauber
+  spells: Zauber
+  standard: Standardaktion
+  talent: Talent
+  talents: Talente
+  tempHp: Temp. TP
+  tool: Werkzeug
+  #trait: Trait
+  #traits: Traits
+  type: Typ
+  uses: Einsätze
+  vulnerability: Schwäche
+  # Settings
+  SETTINGS:
+    #automateBaseStatsFromClassHint: Automatically populate AC, PD, MD, base HP, Recovery and Weapon dices based on class name(s).
+    #automateBaseStatsFromClassName: Automatically compute base stats
+    #automateHPConditionsHint: If enabled, the Staggered and Dead conditions will be automatically applied and removed after hp changes; Disable this if you are using custom conditions via modules such as Combat Utility Belt - it is implicitly disabled if that module is active.
+    #automateHPConditionsName: Auto-manage Dead and Staggered
+    #automatePowerCostHint: Remove resources (e.g. Command Points, Ki or Focus) automatically when using a power with a cost?
+    #automatePowerCostName: Automatically apply power costs
+    #ColorblindHint: Change the colors of the power cards to more accessibility color palette.
+    #ColorblindName: Enable Colorblind Accessibility Mode
+    #ColorblindOptioncolorBlindBY: Tritanopia (Blue/Yellow)
+    #ColorblindOptioncolorBlindRG: Protanopla / Deutanopla (Red/Green)
+    #ColorblindOptionDefault: Default Colors
+    #extendedStatusEffectsHint: If enabled extends the official status list with a handful of useful token markers.
+    #extendedStatusEffectsName: Extended Status Effects List
+    #hideExtraRollsHint: If enabled, powers with multiple attack rolls will display at most one attack per targeted token if any is targeted.
+    #hideExtraRollsName: Limit extra rolls to targeted tokens
+    #hideInsteadOfOpaqueHint: Enable this if you prefer not seeing inactive details at all.
+    #hideInsteadOfOpaqueName: Hide inactive Features / Triggers instead of making them faded-out
+    #initiativeDexTiebreakerHint: If enabled initiative ties will be resolved using the initiative modifier; if not, monsters win by default.
+    #initiativeDexTiebreakerName: Initiative Modifier as Tiebreaker
+    #multiTargetAttackRollsHint: Enable this to automatically duplicate inline attack rolls for multi-target powers based on the number of targets.
+    #multiTargetAttackRollsName: Multi-Target Attack Rolls
+    #rechargeOncePerDayHint: Attempt to recharge powers on quick rests only once (true) or re-attempt after every quick rest (false)?
+    #rechargeOncePerDayName: Recharge once per day only
+    #RoundUpDamageApplicationHint: This will be applied the same way for both characters and npcs
+    #RoundUpDamageApplicationName: When applying damage via the right-click context menu, should it round up (true) or round down (false)?
+    #secondEditionHint: Turn this on to use the 13th Age second edition playtest rules, off if you'd prefer the regular rules.
+    #secondEditionName: Use 2e Playtest Rules
+    #ShowDebugLogsHint: Turn this on for bug reports
+    #ShowDebugLogsName: Show debug logs?
+    #showDefensesInChatHint: Enable this display a list of targeted defenses in the attack line of chat power cards.
+    #showDefensesInChatName: Show target(s) defense(s) in chat
+    #staggeredOverlayHint: If enabled the staggered condition will be automatically applied as a token overlay instead of a normal condition.
+    #staggeredOverlayName: Staggered as overlay
+    #tourVisibilityAll: Everyone can see tours
+    #tourVisibilityGM: Only the GM can see tours
+    #tourVisibilityHint: When new versions of Toolkit13 are released, the system will display a tour of the changes. Use this setting to determine who should see the tours (or if they should be disabled).
+    #tourVisibilityName: Features tour visibility
+    #tourVisibilityOff: Tours are disabled
+    #UnboundEscDieHint: Enable this setting to let the escalation die go above 6 and below 0 when manually adjusted (still remains limited when counting by the current round).
+    #UnboundEscDieName: Unlimited Escalation Die
+  AUTOLEVEL:
+    confirm: Speichern (neue Kopie)
+    help: Dieses Formular kann genutzt werden, um eine Kopie dieses Akteurs mit auf die neue Stufe angepasste Werte (inklusive Angriffen) zu erzeugen.
+    newLevel: Neue Stufe
+  # Characters
+  CHARACTER:
+    RESOURCES:
+      commandPoints: Befehlspunkte
+      #cp: Cmd
+      custom1: Eigene Ressource 1
+      custom2: Eigene Ressource 2
+      custom3: Eigene Ressource 3
+      custom4: Eigene Ressource 4
+      custom5: Eigene Ressource 5
+      custom6: Eigene Ressource 6
+      custom7: Eigene Ressource 7
+      custom8: Eigene Ressource 8
+      custom9: Eigene Ressource 9
+      focus: Fokus
+      ki: Ki
+      momentum: Schwung
+  CHARACTERFLAGS:
+    improvedIniativeHint: Bonus von +4 auf Initiativwürfe.
+    improvedIniativeName: Verbesserte Initiative
+    initiativeAdvHint: Menschliche Volksfähgikeit, 2D20 für Initiative würfeln und den höheren Wert nehmen.
+    initiativeAdvName: Bereit zum Kampf
+    #title: Flags
+  CHARACTERSETTINGS:
+    bg1: Hintergrund 1
+    bg2: Hintergrund 2
+    bg3: Hintergrund 3
+    bg4: Hintergrund 4
+    bg5: Hintergrund 5
+    bg6: Hintergrund 6
+    bg7: Hintergrund 7
+    bg8: Hintergrund 8
+    dualwield: Kampf mit zwei Waffen
+    i1: Ikone 1
+    i2: Ikone 2
+    i3: Ikone 3
+    i4: Ikone 4
+    i5: Ikone 5
+    settings: Einstellungen
+    shield: Schild
+    twohanded: Zweihandwaffe
+  INCREMENTALS:
+    abilityScoreBonusHint: +1 auf 3 Attribute (3./6./9. Stufe)
+    abilityScoreBonus2eHint: +1 auf Attributswerte (3./6./9. Stufe)
+    abilityScoreBonusName: Attributsbonus
+    extraMagicItemHint: Trage einen zusätzlichen magischen Gegenstand, ohne von Eigenarten übermannt zu werden
+    extraMagicItemName: Magischer Gegenstand
+    featHint: Wähle eine Fähigkeit, als wärst du auf der nächsten Stufe
+    featName: Fähigkeit
+    featureHint: Wähle ein Klassenmerkmal, als wärst du auf der nächsten Stufe
+    featureName: Merkmal
+    hpHint: Erhöhe deine Trefferpunkte, als wärst du auf der nächsten Stufe
+    hpName: Trefferpunkte
+    iconRelationshipPointHint: Erhalte einen zusätzlichen Ikonen-Beziehungspunkt (4./7. Stufe)
+    iconRelationshipPointName: Ikonen-Beziehungspunkt
+    powerSpell1Hint: Wähle eine Kraft / einen Zauber, als wärst du auf der nächsten Stufe
+    powerSpell1Name: Kraft / Zauber
+    powerSpell2Hint: Wähle eine Kraft / einen Zauber, als wärst du auf der nächsten Stufe
+    powerSpell2Name: Kraft / Zauber
+    powerSpell3Hint: Wähle eine Kraft / einen Zauber, als wärst du auf der nächsten Stufe
+    powerSpell3Name: Kraft / Zauber
+    powerSpell4Hint: Wähle eine Kraft / einen Zauber, als wärst du auf der nächsten Stufe
+    powerSpell4Name: Kraft / Zauber
+    powerSpellHint: Wähle eine Kraft / einen Zauber, als wärst du auf der nächsten Stufe
+    powerSpellName: Kraft / Zauber
+    skillsHint: Addiere +1 zu allen Fertigkeitsproben
+    skillsName: Fertigkeiten
+    talentHint: Wähle ein Talent, als wärst du auf der nächsten Stufe
+    talentName: Talent
+    # 2E
+    #recoveryName: Recovery
+    #recoveryHint: Gain extra recovery dice as if you were the next level
+    #skillInitiativeName: Skills & Initiative
+    #skillInitiativeHint: Add +1 to all skill and initiative checks
+    #abilMultiplierName: Ability Multiplier
+    #abilMultiplierHint: Double/quadruple the ability modifier contribution to damage and healing (4th/7th level)
+  COINS:
+    copper: Kupfer
+    copperHint: 10 Kupfer = 1 Silber
+    gold: Gold
+    goldHint: 1 Gold = 10 Silber
+    platinum: Platin
+    platinumHint: 1 Platin = 10 Gold
+    silver: Silber
+    silverHint: 1 Silber = 10 Kupfer
+  PREPOPULATE:
+    help: "Klick auf die Checkboxen links von den Kräften, die du hinzufügen willst, und dann klicke unten zum Bestätigen, damit sie deinem Charakter hinzugefügt werden. Du kannst die Namen der Kräfte anklicken, um ihre Beschreibung und verfügbare Fähigkeiten anzuzeigen."
+# Ability Scores
+  str:
+    key: STÄ
+    label: Stärke
+  dex:
+    key: GES
+    label: Geschick
+  con:
+    key: KON
+    label: Konstitution
+  int:
+    key: INT
+    label: Intelligenz
+  wis:
+    key: WEI
+    label: Weisheit
+  cha:
+    key: CHA
+    label: Charisma
+  # Defenses
+  ac:
+    key: RK
+    label: Rüstungsklasse
+    stats: Kon/Ges/Wei
+  pd:
+    key: KW
+    label: Körperlicher Widerstand
+    stats: Stä/Kon/Ges
+  md:
+    key: GW
+    label: Geistiger Widerstand
+    stats: Int/Wei/Cha
+  GROUPS:
+    actionType: Aktion
+    group: Eigene Gruppen
+    powerSource: Klasse/Volk/Gegenstand
+    powerType: Typ
+    powerUsage: Nutzung
+  MONKFORMS:
+    aelabel: Mönch RK-Bonus
+    #finishing: finishing
+    #flow: flow
+    #opening: opening
+  RESTS:
+    full: Auffüllen bei Voller Rast
+    fullreset: Leeren bei Voller Rast
+    header: Beim Rasten
+    none: Nichts
+    quick: Auffüllen bei Kurzer Rast
+    quickreset: Leeren bei Kurzer Rast
+  SORTS:
+    custom: Eigene
+    level: Stufe
+    name: Name
+  INVENTORY:
+    equipment: Magische Gegenstände
+    loot: Beute
+    tool: Werkzeuge
+  ITEM:
+    acBonus: RK-Bonus
+    active: Active
+    arcaneAttackBonus: Arcane Spell / Arcane Attack Bonus
+    arcaneBonus: Arcane Spell / Arcane Attack Bonus
+    attackBonuses: Angriffsboni
+    chakraSlot: Chakra
+    #defenseBonuses: Defense Bonuses
+    #disengageBonus: Disengage Bonus
+    divineAttackBonus: Divine Spell / Divine Attack Bonus
+    divineBonus: Divine Spell / Divine Attack Bonus
+    group: Dinge in der selben Gruppe werden zusammen gruppiert
+    hpBonus: TP-Bonus
+    mdBonus: GW-Bonus
+    #meleeAttackBonus: Melee Attack Bonus
+    #meleeBonus: Melee Attack Bonus
+    pdBonus: KW-Bonus
+    price: Preis
+    #rangedAttackBonus: Ranged Attack Bonus
+    #rangedBonus: Ranged Attack Bonus
+    recoveriesBonus: Erholungen-Bonus
+    saveBonus: Rettungswurf-Bonus
+  CHAKRA:
+    armor: Rüstung, Robe, Hemd, Tunika
+    arrow: Pfeil, Bolzen, Schleuderstein
+    belt: Gürtel, Schwertscheide, Kilt, Rock
+    book: Buch, Schriftrolle, Manuskript, Zauberbuch
+    boots: Stiefel, Sandale, Schuh, Slipper
+    cloak: Umhang, Mantel, Cape
+    glove: Handschuh, Panzerhandschuh, Fäustling
+    helmet: Helm, Diadem, Krone, Kappe
+    melee: Waffe, Nahkampf
+    necklace: Halskette, Amulett
+    none: Keins
+    ranged: Waffe, Fernkampf
+    ring: Ring
+    shield: Schild
+    staff: Stab (Ritualgegenstand)
+    symbol: Symbol, Reliquie, heilige Sichel (Ritualgegenstand)
+    wand: Zauberstab (Ritualgegenstand)
+    wondrous: Wundersamer Gegenstand
+  CHAT:
+    actionType: Aktionstyp
+    adventurer: Abenteurer-Fähigkeit
+    adventurerDescription: Beschreibung der Abenteurer-Fähigkeit
+    always: Immer
+    attack: Angriff
+    breathWeapon: Odemwaffe
+    Cancel: Abbrechen
+    castBroadEffect: Cast for Broad Effect
+    castPower: Cast for Power
+    champion: Helden-Fähigkeit
+    championDescription: Beschreibung der Helden-Fähigkeit
+    CmdPtsReset: Auf 1 setzen
+    complicatedAdvantages: Complicated Advantages
+    cost: Kosten
+    crit: Krit
+    Delete: Löschen
+    DeleteConfirm: Sicher, dass das gelöscht werden soll?
+    effect: Effekt
+    epic: Epische Fähigkeit
+    epicDescription: Beschreibung der Epischen Fähigkeit
+    #finalVerse: Final Verse
+    FullHeal: Volle Rast
+    FullHealBody: Füllt alle Trefferpunkte, Erholungen und Kraft-Einsätze auf.
+    FullHealHP: Auf Maximum gesetzt
+    group: Gruppe
+    hit: Treffer
+    #hit1: Special Hit (1)
+    #hit2: Special Hit (2)
+    #hit3: Special Hit (3)
+    hitEven: Gerader Treffer
+    hitOdd: Ungerader Treffer
+    HP: TP
+    ItemReset: Einsätze aufgefüllt auf
+    KiReset: Aufgefüllt auf
+    embeddedMacro: Eingebettetes Makro
+    embeddedMacroSummary: Eingebettetes Makro bearbeiten, das ausgeführt wird, wenn diese Kraft benutzt wird.
+    embeddedMacroPermissionError: Kann eingebettetes Makro nicht ausführen - GM muss diesem Nutzer Rechte gewähren!
+    miss: Fehlschlag
+    missEven: Gerader Fehlschlag
+    missOdd: Ungerader Fehlschlag
+    MomentReset: verloren
+    NoResources: Nicht genug Ressourcen
+    NoUses: Keine Einsätze mehr
+    NoUsesMsg: Keine Einsätze übrig. Trotzdem benutzen?
+    powerLevel: Stufe
+    powerSource: Kraftquellentyp
+    powerSourceName: Kraftquellenname
+    powerOriginName: Ursprünglicher Name
+    powerType: Krafttyp
+    powerUsage: Krafteinsätze
+    QuickRest: Kurze Rast
+    QuickRestBody: Pro-Kampf-Kräfte auffüllen, würfeln, um aufladbare Kräfte wiederaufzuladen und Erholungen würfeln, um bis zur Hälfte der TP zu heilen.
+    #QuickRestHP1: rolled
+    #QuickRestHP2: recoveries healing
+    #range: Range
+    #recharge: Recharge
+    #RechargeFail: recharge failed
+    #RechargeSucc: recharged
+    Rest: Rasten
+    Rests: Rasten
+    #sequencerTarget: Sequencer File (Target)
+    #sequencerRay: Sequencer File (Ray)
+    #sequencerSelf: Sequencer File (Self)
+    #sequencerReverse: Reverse Sequence
+    #special: Special
+    #spellChain: Chain Spell
+    spellLevel2: Stufe 2 Zauber
+    spellLevel3: Stufe 3 Zauber
+    spellLevel4: Stufe 4 Zauber
+    spellLevel5: Stufe 5 Zauber
+    spellLevel6: Stufe 6 Zauber
+    spellLevel7: Stufe 7 Zauber
+    spellLevel8: Stufe 8 Zauber
+    spellLevel9: Stufe 9 Zauber
+    spellLevel10: Stufe 10 Zauber
+    rollTable: Würfeltabelle
+    #sustainedEffect: Opening and Sustained Effect
+    #sustainOn: Sustain On
+    target: Ziel
+    trigger: Auslöser
+    #unambiguousAdvantages: Unambiguous Advantages
+    #Use: Use
+  TARGETING:
+    #'2': two
+    #'3': three
+    #'4': four
+    #'5': five
+    #'6': six
+    #'7': seven
+    #'8': eight
+    #'9': nine
+    #all: all
+    #crescendoSpecial: You can choose more than one target for this spell, but you take a –2 penalty when attacking two targets, a –3 penalty for three targets, and so on.
+    #each: each
+    #every: every
+    #random: random
+  SAVE:
+    death: Todes-RW.
+    disengage: Loslösen
+    easy: Einfacher Rettungswurf
+    easyShort: Einfach
+    failure: Misserfolg
+    hard: Schwerer Rettungswurf
+    hardShort: Schwer
+    lastGasp: Letzter Atem
+    normal: Normaler Rettungswurf
+    normalShort: Normal
+    success: Erfolg
+  EFFECT:
+    #StatusAsleep: Asleep
+    #StatusBlessed: Blessed
+    #StatusBonusDefenses: Bonus Defenses
+    #StatusBuffed: Buffed
+    StatusConfused: Verwirrt
+    #StatusCursed: Cursed
+    StatusDazed: Benommen
+    StatusDead: Tot
+    #StatusDebuffed: Debuffed
+    #StatusEmpowered: Empowered
+    StatusFear: Furcht
+    #StatusFireShield: Fire Shield
+    #StatusFlying: Flying
+    #StatusGrabbed: Grabbed
+    StatusHampered: Eingeschränkt
+    #StatusHindered: Hindered
+    StatusHelpless: Hilflos
+    #StatusHidden: Hidden
+    StatusHolyShield: Holy Shield
+    #StatusIceShield: Ice Shield
+    StatusLastGasps: Letzter Atem
+    #StatusMageShield: Mage Shield
+    #StatusOngoingDamage: Ongoing Damage
+    #StatusReducedDefenses: Reduced Defenses
+    #StatusRegen: Regeneration
+    #StatusShining: Radiating Light
+    #StatusShocked: Shocked
+    #StatusStaggered: Staggered
+    StatusStuck: Festsitzend
+    StatusStunned: Betäubt
+    #StatusUnconscious: Unconscious
+    StatusVulnerable: Anfällig
+    StatusWeakened: Geschwächt
+  UI:
+    errNotEnoughCP: Nicht genug Befehlspunkte, um diesen Befehl zu nutzen. Trotzdem nutzen?
+    errNotEnoughKi: Nicht genug Ki, um diese Kraft zu nutzen. Trotzdem nutzen?
+    errNoMomentum: Nicht den nötigen Schwung, um diese Kraft zu nutzen. Trotzdem nutzen?
+    errNoFocus: Nicht den nötigen Fokus, um diese Kraft zu nutzen. Trotzdem nutzen?
+    errNoCustomResource: Nicht genug
+    errNoCustomResource2: Trotzdem nutzen?
+    errNotInteger: muss eine ganze Zahl sein
+    errDependency: Die Module <strong>vueport</strong> und <strong>dlopen</strong> werden für den V2-Charakterbogen benötigt. Nachdem sie über die Foundry-Setupseite installiert wurden, steht der V2-Charakterbogen zur Auswahl.
+    enableDependencies: Abhängigkeiten aktivieren?
+    dependencyContent: Der V2-Charakterbogen benötigt die Module VuePort und dlopen. Sollen diese jetzt aktiviert werden?
+    noToken: Keine Spielfigur ausgewählt.
+    tooManyLevels: Ein Monster um mehr als 6 Stufen zu ändern wird nicht empfohlen.
+    levelLimits: Stufe kann nicht über 15 oder unter 0 gesetzt werden.
+    classChange: Klassenänderung erkannt, Basiswerte angepasst.
+  MIGRATIONS:
+    start: 'Wende Toolkit13 System-Migration Version {version} an. Bitte das Spiel nicht schließen und den Server nicht beenden...'
+    complete: "Toolkit13 System-Migration zu Version {version} beendet!"
+    updateActors: 'Aktualisiere Welt-Akteure'
+    updateTokens: 'Aktualisiere Welt-Spielfiguren'
+    updateCompendiumActors: 'Aktualisiere Kompendium-Akteure: {pack}'
+    updateCompendiumScenes: 'Aktualisiere Kompendium-Szenen: {pack}'
+    '1_19_0': "Toolkit13 1.19.0: Aktualisiere NSC-Initiative, um eine feste Zahl zu nutzen statt sie aufgrund der Stufe zu berechnen."
+    '1_24_0': "Toolkit13 1.24.0: Aktualisiere SC-Initiative, um das Verbesserte Iniative Flag zu entfernen."
+# Tours
+  TOURS:
+    # '170':
+    #   welcome: Welcome to Toolkit13 (13th Age Compatible) version 1.7.0! Here's a quick tour of new features
+    #   documentation: We have started the (long) process of writing documentation for the system. If you have documentation you want to contribute, please reach out or issue a Pull Request!
+    #   cards: We now have Card Support for Icon Relationship 5's and 6's - Please see the documentation for more info on how to enable and set this up
+    #   sheets: Character sheets have been reworked. Open one up to check it out!
+    #   showItem: You can now show an Item to all players with a new 'Show to Players' button
+    #   iconRelationships: Rolling Icon Relationships now has a nicer Chat display, along with Disengage and Save checks
+    #   monstersCompendium: There is now a system-provided Monsters Compendium
+    #   generalFeats: Along with General Feats, courtesy of the Community!
+    #   end: "There's a variety of bug fixes and minor tweaks as well, such as to Trigger automation. Come join us in the Foundry Discord #13th-age channel for questions and feedback!"
+    # '180':
+    #   welcome: Welcome to Toolkit13 (13th Age Compatible) version 1.8.0! Here's a quick tour of new features
+    #   monkCompendium: The Monk compendium is back up and available to use! Monk forms come preloaded with groups, so checkout the manual group sorting option on monk character sheets! Go jab, punch, and kick your way to victory!
+    #   escalationDie: The Escalation die is now manually adjustable, and via a new System Setting can even go past 9000! (6 is the default max)
+    #   tierShorthand: Thanks to LegoFed3, there is now a @tier shorthand for Actors. Tier is the multiplier for each tier (1x adv, 2x cha, 3x epic)
+    #   end: "There's a variety of bug fixes and minor tweaks as well, such as multi-class health calculations and various compendium updates. Come join us in the Foundry Discord #13th-age channel for questions and feedback!"
+    # '190':
+    #   welcome: Welcome to Toolkit13 (13th Age Compatible) version 1.9.0! Here's a quick tour of new features
+    #   aip: Added basic support for the Autocomplete Inline Properties (https://foundryvtt.com/packages/autocomplete-inline-properties/) module, if enabled.
+    #   necromancer: The Necromancer compendium is back up and available to use! Go Raise Hell!
+    #   colorblind: Thanks to EndlesNights, we now have colorblind options. Check out the System Settings - powers should be much clearer for colorblind players!
+    #   baseStats: HP, AC, Damage dice, and more are now optionally calculated automatically based on your Class. Huge thanks to LegoFed3 for this!
+    #   inlineRoll: All Power Compendiums should now have inline Rolls. Thanks to everyone in the community who helped!
+    #   inlineRollDocs: We now have additional documentation for inline Rolls in the Reference dialog!
+    #   systemDocs: Our System documentation has been expanded even further, and is now in Gitbooks for a better experience
+    #   chatCards: Ability / Background checks now have a new Chat Card layout that includes useful information such as "Background used". The Icon Roll Chat Cards got a makeover as well - roll the dice and see what the Icons bring!
+    #   end: "There's a variety of bug fixes and minor tweaks as well, such as fixing powers in the Compendiums, adding Weakling / Elite to creature sizes, negative recovery logic, and more. Come join us in the Foundry Discord #13th-age channel for questions and feedback!"
+    # '1100':
+    #   welcome: Welcome to Toolkit13 (13th Age Compatible) version 1.10.0! Here's a quick tour of new features
+    #   v2Sheet: We've redesigned the character sheet! The overall structure is the same, but everything that's rollable will now have a blue d20 near it, and the sheet will feel more responsive. If you prefer the original sheet, you can return to the original sheet per character by clicking the "Sheet" settings gear in the header of the sheet window.
+    #   nightMode: The new character sheet has a night mode! Click the <i class="fas fa-cogs"></i> tab on the sheet and find it near the bottom of the right sidebar.
+    #   rolls: Many more areas of the sheet are now rollable, such as initiative, death saves, icon rolls, and more. Watch out for a blue <i class="fas fa-dice-d20"></i> icon to find rollable links!
+    #   iconRolls: Icon rolls are now stored on the sheet! You can also click an icon result icon to cycle through 5, 6, and empty results.
+    #   rests: The sheet now supports both quick rests and full heal-ups! Find them in the new resources section of the character sheet directly above powers.
+    #   powerImporter: The power importer has been redesigned! The new design is much closer to a character builder, and will pull from any classes and races detected on your character sheet.
+    #   end: "There's also a variety of bug fixes and minor tweaks added to the system! Come join us in the Foundry Discord #13th-age channel for questions and feedback!"
+    # '1170':
+    #   welcome: Welcome to Toolkit13 (13th Age Compatible) version 1.17.0! We have some important changes for critical hits in this release.
+    #   crits: <strong>Crits no longer double damage automatically.</strong>. Instead, each target that was critted against will be <strong>bold</strong> in the chat card. We've also added offensive and defensive crit modifiers as new settings within character sheets, and we've added an Active Effect to the vulnerable condition.
+    #   compendia: We have several corrections to existing compendia entries, and we've added <strong>magic items</strong> from the SRD!
+    #   end: "There's also a variety of bug fixes and minor tweaks added to the system! You can read the full release notes <a href='https://gitlab.com/asacolips-projects/foundry-mods/archmage/-/releases/1.17.0' target='_blank'>here</a>. Come join us in the Foundry Discord #13th-age channel for questions and feedback!"
+    # '1190':
+    #   welcome: Welcom to Toolkit13 (13th Age Compatible) version 1.19.0! We have some big changes for NPCs including a new sheet and updated compendiums!
+    #   end: "You can read the full release notes <a href='https://gitlab.com/asacolips-projects/foundry-mods/archmage/-/releases/1.19.0' target='_blank'>here</a>. Come join us in the Foundry Discord #13th-age channel for questions and feedback!"
+    #   npc:
+    #     welcome: We've updated the NPC sheet to a new design! The original NPC sheet is still available and can be switched to by setting the sheet to the "Legacy NPC Sheet".
+    #     init: NPC initiative no longer includes the NPC's level. Now, NPC initiative will use the exact value you enter, and we've included a migration to update all of your actors, tokens, and compendiums to account for it.
+    #     header: The header now includes flavor text and a cleaner presentation for its fields. Some fields in the header have to be clicked to edit them.
+    #     attributes: Attributes are now in a row directly below the header and above the NPC sheet tabs. These include defenses and hit points as before, but now there are two new columns for Saves and Disengage checks that work the same as they do on the PC character sheet.
+    #     compact: There's also a small arrow in the bottom right corner of the NPC sheet header (just below the NPC's avatar) that puts the sheet into a compact mode by reducing the size of the header and attributes and hiding some items less important for play such as flavor text. This is handled as a flag per actor, so it will persist between page reloads.
+    #     details: The NPC's biography! This field always existed, but we never had a place for it before. We're likely going to expand this section to include other long text fields like battle tactics, story hooks, and icons.
+    #     actions: |
+    #       <div>Actions, Traits, and Nastier Specials now work similar to how Powers work on character sheets.</div>
+    #       <ul>
+    #         <li>All three types support avatars (including chat)!</li>
+    #         <li>Actions are summarized and can be expanded on click.</li>
+    #         <li>Inline rolls display in a new summarized format, such as <strong style="color:#671212;">+8+LVL+ED</strong>.</li>
+    #       </ul>
+    #     effects: These work exactly like they do for character sheets! Conditions and custom effects will show up here and can be created, edited, or removed right from the sheet.
+    #     modifyLevel: |
+    #       <p>The modify level tab includes a slider that lets you adjust the level of the monster within the constraints allowed by the core rules (+/- 6, min 0, max 15). Clicking confirm will create a copy of the monster, and the new monster will appear in your world's actor directory. The system will make a best effort calculation to change the NPC's stats, attacks, and damage.</p>
+    #       <p>This feature is experimental, and we're looking forward to improving it with feedback on what works and what doesn't!</p>
+    #     settings: As with the character sheet, settings have been moved into their own tab. This currently only includes visual information such as the avatar settings and the ability to switch the NPC sheet to night mode, but we'll likely expand this in the future with additional settings!
+    #   compendiums: |
+    #     <strong>SRD Monster Compendiums</strong> have been updated to include inline rolls for <em>most</em> use cases. There have been a few outliers that slipped through the cracks, but virtually every monster in the SRD compendium was updated to have inline rolls added for their targeting lines and their damage. This only applies to monsters in the compendium.
