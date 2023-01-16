@@ -1,6 +1,7 @@
 ARCHMAGE:
   abilities: Attribute
   abilityName: Attributsname
+  abilityScore: Attributswert
   act: Akt.
   action: Aktion
   actions: Aktionen
@@ -10,6 +11,7 @@ ARCHMAGE:
   attackMod: Angriffsmodifikator
   attributes: Attribute
   avatarAlt: Charakterprofilbild
+  background: Hintergrund
   backgrounds: Hintergründe
   baseAC: Grund-RK
   baseHP: Grund-TP
@@ -25,9 +27,18 @@ ARCHMAGE:
   calculateHP: Max. TP berechnen?
   calculateRecoveries: Max. Erholungen berechnen?
   chakra: Chakra
+  checkBackground: Hintergrundwurf
+  checkBackgroundFormat: "Hintergrund: {name}"
+  checkSkill: Fertigkeitswurf
+  checkSkillFormat: "{name}-Fertigkeitswurf"
   class: Klasse
   conflicted: Zwiespältig
-  #create: Create
+  contextApplyDamage: Als Schaden
+  contextApplyDamageHalf: Als halben Schaden
+  contextApplyDamageDouble: Als doppelten Schaden
+  contextApplyDamageTriple: Als dreifachen Schaden
+  contextApplyHealing: Als Heilung
+  contextApplyTempHealth: Als temporäre Trefferpunkte
   critModAtk: Krit.-Modifikator (Angriff)
   critModDef: Krit.-Modifikator (Verteidigung)
   daily: Täglich
@@ -39,6 +50,7 @@ ARCHMAGE:
   effects: Effekte
   equipment: Ausrüstung
   equipmentName: Ausrüstungsname
+  escalationDieLabel: Eskalations-Würfel
   feat: Fähigkeit
   feats: Fähigkeiten
   feature: Merkmal
@@ -61,13 +73,14 @@ ARCHMAGE:
   initiative: Initiative
   interrupt: Unterbrechungsaktion
   inventory: Inventar
-  #item: 'Item'
+  item: Gegenstand
   #jabWeaponDice: JAB Weapon Dice
-  #keyMod: Key Modifier
-  #keyReduced: Reduced to {mod} due to {kmod1}/{kmod2} key modifier
+  keyMod: Schlüsselmod.
+  keyReduced: Auf {mod} reduziert aufgrund von Schlüsselmodifikator {kmod1}/{kmod2}
   #kickWeaponDice: KICK Weapon Dice
-  #kin: Kin
+  kin: Volk
   level: Stufe
+  levelFormat: "{level}. Stufe"
   loot: Beute
   lvl: Stu
   magicItems: Magische Gegenstände
@@ -81,13 +94,14 @@ ARCHMAGE:
   misc: Sonst.
   miscellaneous: Sonstige
   miss: Fehlschlag
-  #mod: Mod
+  mod: Mod
   modifyLevel: Stufe ändern
   move: Bewegungsaktion
   name: Name
   nastierSpecial: Fiesere Spezialfähigkeit
   nastierSpecials: Fiesere Spezialfähigkeiten
   negative: Negativ
+  newItem: Neue {item}
   once-per-battle: Pro Kampf
   oneUniqueThing: Einzigartiges Merkmal
   other: Andere
@@ -100,18 +114,48 @@ ARCHMAGE:
   quantity: Menge
   quick: Schnelle Aktion
   race: Volk
-  #ranged: Ranged
+  ranged: Fernkampf
   #rangedAbility: Ranged Ability
   #rangedDamageAbility: Ranged Damage Ability
   #rangedMiss: Ranged Miss Dmg.
-  #rangedWeaponDice: Ranged Weapon Dice
+  rangedWeaponDice: Fernkampfwaffen-Würfel
   rchg: Aufl.
   recharge: Aufladen
   recoveries: Erholungen
+  recovery: Erholung
+  recoveryAdventurer: Trank (Aben.)
+  recoveryAdventurerFull: Abenteurer-Trank
+  recoveryApplyHealingLabel: Heilung anwenden?
+  recoveryBonusLabel: Erholungsbonus?
+  recoveryChampion: Trank (Held)
+  recoveryChampionFull: Helden-Trank
+  recoveryChatTitle: "{recovery} Erholung"
+  recoveryChatTitleHalf: "{recovery} (Halb)"
   recoveryDice: Erholungswürfel
+  recoveryEpic: Trank (Episch)
+  recoveryEpicFull: Epischer Trank
+  recoveryFree: Frei
+  recoveryFreeChat: Freie
+  recoveryIconic: Trank (Ikone)
+  recoveryIconicFull: Ikonischer Trank
+  recoveryNormal: Normal
+  recoveryRoll: Erholungswurf
   resistance: Resistenz
   role: Rolle
+  rollAdvantageShort: Vor.
+  rollAverageLabel: Durchschnitt für Wurf?
+  rollBonus: Situativer Bonus?
+  rollBonusPlaceholder: z.B. +1d4
+  rollDisadvantageShort: Nach.
+  rollFormula: Formel
+  rollMode: Würfelmodus
+  rollNormal: Normal
   saves: Rettungswurf
+  sheetActiveEffect: Toolkit13 Aktiver Effekt Bogen
+  sharePlayers: Spielern zeigen
+  sheetCharacter: Charakterbogen
+  sheetItem: Itembogen
+  sheetNPC: NSC-Bogen
   size: Größe
   sort: Sortieren
   #specialTraits: Special Traits
@@ -171,12 +215,13 @@ ARCHMAGE:
     #UnboundEscDieName: Unlimited Escalation Die
   AUTOLEVEL:
     confirm: Speichern (neue Kopie)
-    help: Dieses Formular kann genutzt werden, um eine Kopie dieses Akteurs mit auf die neue Stufe angepasste Werte (inklusive Angriffen) zu erzeugen.
+    help: Dieses Formular kann genutzt werden, um eine Kopie dieses Akteurs mit auf die neue Stufe angepassten Werten (inklusive Angriffen) zu erzeugen.
     newLevel: Neue Stufe
   # Characters
   CHARACTER:
     RESOURCES:
       commandPoints: Befehlspunkte
+      commandPointsGained: "{points} Befehlspunkte erhalten."
       #cp: Cmd
       custom1: Eigene Ressource 1
       custom2: Eigene Ressource 2
@@ -238,17 +283,17 @@ ARCHMAGE:
     powerSpell4Name: Kraft / Zauber
     powerSpellHint: Wähle eine Kraft / einen Zauber, als wärst du auf der nächsten Stufe
     powerSpellName: Kraft / Zauber
-    skillsHint: Addiere +1 zu allen Fertigkeitsproben
+    skillsHint: Addiere +1 zu allen Fertigkeitswürfen
     skillsName: Fertigkeiten
     talentHint: Wähle ein Talent, als wärst du auf der nächsten Stufe
     talentName: Talent
     # 2E
-    #recoveryName: Recovery
-    #recoveryHint: Gain extra recovery dice as if you were the next level
-    #skillInitiativeName: Skills & Initiative
-    #skillInitiativeHint: Add +1 to all skill and initiative checks
-    #abilMultiplierName: Ability Multiplier
-    #abilMultiplierHint: Double/quadruple the ability modifier contribution to damage and healing (4th/7th level)
+    recoveryName: Erholung
+    recoveryHint: Erhalte zusätzliche Erholungswürfel, als wärst du auf der nächsten Stufe
+    skillInitiativeName: Fertigkeiten & Initiative
+    skillInitiativeHint: +1 auf alle Fertigkeits- und Initiativewürfen
+    abilMultiplierName: Attributmultiplikator
+    abilMultiplierHint: Verdoppelt/verdreifacht den Beitrag des Attributsmodifikators zu Schaden und Heilung (4./7. Stufe)
   COINS:
     copper: Kupfer
     copperHint: 10 Kupfer = 1 Silber
@@ -259,7 +304,7 @@ ARCHMAGE:
     silver: Silber
     silverHint: 1 Silber = 10 Kupfer
   PREPOPULATE:
-    help: "Klick auf die Checkboxen links von den Kräften, die du hinzufügen willst, und dann klicke unten zum Bestätigen, damit sie deinem Charakter hinzugefügt werden. Du kannst die Namen der Kräfte anklicken, um ihre Beschreibung und verfügbare Fähigkeiten anzuzeigen."
+    help: "Auf die Checkboxen links von den Kräften klicken, die hinzugefügt werden sollen und anschließend unten auf Speichern klicken, um sie dem Charakter hinzuzufügen. Ein Klick auf die Namen der Kräfte zeigt Beschreibung und verfügbare Fähigkeiten an."
 # Ability Scores
   str:
     key: STÄ
@@ -304,8 +349,8 @@ ARCHMAGE:
     #flow: flow
     #opening: opening
   RESTS:
-    full: Auffüllen bei Voller Rast
-    fullreset: Leeren bei Voller Rast
+    full: Auffüllen bei Voller Erholung
+    fullreset: Leeren bei Voller Erholung
     header: Beim Rasten
     none: Nichts
     quick: Auffüllen bei Kurzer Rast
@@ -320,30 +365,33 @@ ARCHMAGE:
     tool: Werkzeuge
   ITEM:
     acBonus: RK-Bonus
-    active: Active
-    arcaneAttackBonus: Arcane Spell / Arcane Attack Bonus
-    arcaneBonus: Arcane Spell / Arcane Attack Bonus
+    active: Aktiv
+    arcaneBonus: Arkaner Zauber / Arkaner Angriffsbonus
     attackBonuses: Angriffsboni
     chakraSlot: Chakra
-    #defenseBonuses: Defense Bonuses
-    #disengageBonus: Disengage Bonus
-    divineAttackBonus: Divine Spell / Divine Attack Bonus
-    divineBonus: Divine Spell / Divine Attack Bonus
+    defenseBonuses: Verteidigungsboni
+    disengageBonus: Loslösen-Bonus
+    divineBonus: Göttliche Zauber / Göttlicher Angriffsbonus
+    escalationBlockedHint: Verhindert Nutzung von Eskalationswürfel
+    critModBonus: Krit. Treffer Modifikator Bonus
+    critModBonusHint: +1 heißt kritischer Treffer bei 19-20 etc.
+    critDefBonus: Krit. Treffer Widerstand Bonus
+    critDefBonusHint: +1 heißt, etwas was bei 19-20 kritisch trifft, trifft nur bei 20 kritisch.
     group: Dinge in der selben Gruppe werden zusammen gruppiert
     hpBonus: TP-Bonus
     mdBonus: GW-Bonus
-    #meleeAttackBonus: Melee Attack Bonus
-    #meleeBonus: Melee Attack Bonus
+    meleeBonus: Nahkampfangriffsbonus
     pdBonus: KW-Bonus
     price: Preis
-    #rangedAttackBonus: Ranged Attack Bonus
-    #rangedBonus: Ranged Attack Bonus
+    rangedBonus: Fernkampfangriffsbonus
     recoveriesBonus: Erholungen-Bonus
     saveBonus: Rettungswurf-Bonus
   CHAKRA:
     armor: Rüstung, Robe, Hemd, Tunika
+    armorBonus: "Default Bonus: Armor Class"
     arrow: Pfeil, Bolzen, Schleuderstein
     belt: Gürtel, Schwertscheide, Kilt, Rock
+    beltBonus: "Default Bonus: Recoveries"
     book: Buch, Schriftrolle, Manuskript, Zauberbuch
     boots: Stiefel, Sandale, Schuh, Slipper
     cloak: Umhang, Mantel, Cape
@@ -367,12 +415,12 @@ ARCHMAGE:
     attack: Angriff
     breathWeapon: Odemwaffe
     Cancel: Abbrechen
-    castBroadEffect: Cast for Broad Effect
-    castPower: Cast for Power
+    castBroadEffect: Auf mehrere Ziele
+    castPower: Auf ein Ziel
     champion: Helden-Fähigkeit
     championDescription: Beschreibung der Helden-Fähigkeit
     CmdPtsReset: Auf 1 setzen
-    complicatedAdvantages: Complicated Advantages
+    complicatedAdvantages: Vorteile mit Komplikation
     cost: Kosten
     crit: Krit
     Delete: Löschen
@@ -380,22 +428,22 @@ ARCHMAGE:
     effect: Effekt
     epic: Epische Fähigkeit
     epicDescription: Beschreibung der Epischen Fähigkeit
-    #finalVerse: Final Verse
-    FullHeal: Volle Rast
+    finalVerse: Schlussvers
+    FullHeal: Volle Erholung
     FullHealBody: Füllt alle Trefferpunkte, Erholungen und Kraft-Einsätze auf.
     FullHealHP: Auf Maximum gesetzt
     group: Gruppe
     hit: Treffer
-    #hit1: Special Hit (1)
-    #hit2: Special Hit (2)
-    #hit3: Special Hit (3)
+    hit1: Spezieller Treffer (1)
+    hit2: Spezieller Treffer (2)
+    hit3: Spezieller Treffer (3)
     hitEven: Gerader Treffer
     hitOdd: Ungerader Treffer
     HP: TP
     ItemReset: Einsätze aufgefüllt auf
     KiReset: Aufgefüllt auf
     embeddedMacro: Eingebettetes Makro
-    embeddedMacroSummary: Eingebettetes Makro bearbeiten, das ausgeführt wird, wenn diese Kraft benutzt wird.
+    embeddedMacroSummary: Eingebettetes Makro bearbeiten. Wird bei Benutzung ausgeführt.
     embeddedMacroPermissionError: Kann eingebettetes Makro nicht ausführen - GM muss diesem Nutzer Rechte gewähren!
     miss: Fehlschlag
     missEven: Gerader Fehlschlag
@@ -412,20 +460,22 @@ ARCHMAGE:
     powerUsage: Krafteinsätze
     QuickRest: Kurze Rast
     QuickRestBody: Pro-Kampf-Kräfte auffüllen, würfeln, um aufladbare Kräfte wiederaufzuladen und Erholungen würfeln, um bis zur Hälfte der TP zu heilen.
-    #QuickRestHP1: rolled
-    #QuickRestHP2: recoveries healing
+    QuickRestHP: "{recoveries} gewürfelt, {hp} TP geheilt"
     #range: Range
-    #recharge: Recharge
-    #RechargeFail: recharge failed
-    #RechargeSucc: recharged
+    recharge: Aufladen
+    RechargeFail: Aufladen fehlgeschlagen
+    RechargeLabel: Wiederaufladen
+    RechargeRoll: Wiederaufladen-Wurf
+    RechargeSucc: Aufgeladen
     Rest: Rasten
     Rests: Rasten
-    #sequencerTarget: Sequencer File (Target)
-    #sequencerRay: Sequencer File (Ray)
-    #sequencerSelf: Sequencer File (Self)
-    #sequencerReverse: Reverse Sequence
+    sequencerDesc: Sequencer-Animation konfigurieren.
+    sequencerTarget: Sequencer-Datei (Ziel)
+    sequencerRay: Sequencer-Datei (Strahl)
+    sequencerSelf: Sequencer-Datei (Selbst)
+    sequencerReverse: Sequenz umkehren
     #special: Special
-    #spellChain: Chain Spell
+    spellChain: Kettenzauber
     spellLevel2: Stufe 2 Zauber
     spellLevel3: Stufe 3 Zauber
     spellLevel4: Stufe 4 Zauber
@@ -440,8 +490,8 @@ ARCHMAGE:
     #sustainOn: Sustain On
     target: Ziel
     trigger: Auslöser
-    #unambiguousAdvantages: Unambiguous Advantages
-    #Use: Use
+    unambiguousAdvantages: Eindeutige Vorteile
+    Use: Benutzen
   TARGETING:
     #'2': two
     #'3': three
@@ -469,25 +519,35 @@ ARCHMAGE:
     normalShort: Normal
     success: Erfolg
   EFFECT:
-    #StatusAsleep: Asleep
-    #StatusBlessed: Blessed
+    AE:
+      arcane: Arkan
+      critHitBonus: Krit. Treffer Bonus
+      critHitDefense: Krit. Treffer Widerstand
+      delete: Effekt löschen
+      divine: Göttlich
+      edit: Effekt bearbeiten
+      negativeRecovery: Negative Erholungen
+      new: Neuer Effekt
+      toggle: Effekt umschalten
+    StatusAsleep: Schlafend
+    StatusBlessed: Gesegnet
     #StatusBonusDefenses: Bonus Defenses
     #StatusBuffed: Buffed
     StatusConfused: Verwirrt
-    #StatusCursed: Cursed
+    StatusCursed: Verflucht
     StatusDazed: Benommen
     StatusDead: Tot
     #StatusDebuffed: Debuffed
     #StatusEmpowered: Empowered
     StatusFear: Furcht
     #StatusFireShield: Fire Shield
-    #StatusFlying: Flying
+    StatusFlying: Fliegend
     #StatusGrabbed: Grabbed
     StatusHampered: Eingeschränkt
     #StatusHindered: Hindered
     StatusHelpless: Hilflos
     #StatusHidden: Hidden
-    StatusHolyShield: Holy Shield
+    #StatusHolyShield: Holy Shield
     #StatusIceShield: Ice Shield
     StatusLastGasps: Letzter Atem
     #StatusMageShield: Mage Shield
@@ -496,10 +556,10 @@ ARCHMAGE:
     #StatusRegen: Regeneration
     #StatusShining: Radiating Light
     #StatusShocked: Shocked
-    #StatusStaggered: Staggered
+    StatusStaggered: Angeschlagen
     StatusStuck: Festsitzend
     StatusStunned: Betäubt
-    #StatusUnconscious: Unconscious
+    StatusUnconscious: Bewusstlos
     StatusVulnerable: Anfällig
     StatusWeakened: Geschwächt
   UI:
@@ -525,7 +585,7 @@ ARCHMAGE:
     updateCompendiumActors: 'Aktualisiere Kompendium-Akteure: {pack}'
     updateCompendiumScenes: 'Aktualisiere Kompendium-Szenen: {pack}'
     '1_19_0': "Toolkit13 1.19.0: Aktualisiere NSC-Initiative, um eine feste Zahl zu nutzen statt sie aufgrund der Stufe zu berechnen."
-    '1_24_0': "Toolkit13 1.24.0: Aktualisiere SC-Initiative, um das Verbesserte Iniative Flag zu entfernen."
+    '1_24_0': "Toolkit13 1.24.0: Aktualisiere SC-Initiative, um das Verbesserte Initiative Flag zu entfernen."
 # Tours
   TOURS:
     # '170':

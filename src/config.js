@@ -1,3 +1,5 @@
+const debouncedReload = foundry.utils.debounce(() => window.location.reload(), 100);
+
 export default [
     {
         name: 'enableCompendiumTranslation',
@@ -8,7 +10,7 @@ export default [
             type: Boolean,
             config: true,
             default: true,
-            onChange: () => window.location.reload()
+            onChange: debouncedReload
         }
     }
 ];

@@ -4,7 +4,7 @@ import * as Util from './src/util.js';
 const module_id = 'toolkit13-de';
 const module_lang = 'de';
 
-Hooks.once('init', () => {
+Hooks.once('ready', () => {
     // Create settings
     ModConfig.forEach((cfg) => {
         // Skip settings not applicable for this system version
@@ -16,6 +16,10 @@ Hooks.once('init', () => {
             game.settings.register(module_id, cfg.name, cfg.data);
         }
     });
+
+    if (game.i18n.lang !== 'de') {
+      return;
+    }
 
     Util.setAllIfExist(CONFIG.ARCHMAGE.powerSources, {
         'class': 'Klasse',
@@ -37,12 +41,12 @@ Hooks.once('init', () => {
         'at-will': 'Beliebig',
         'once-per-battle': 'Pro Kampf',
         'recharge': 'Aufladen',
-        'daily': 'Täglich',
+        'daily': 'Volle Erholung',
         'other': 'Andere'
     });
 
     Util.setAllIfExist(CONFIG.ARCHMAGE.equipUsages, {
-        'daily': 'Täglich',
+        'daily': 'Volle Erholung',
         'recharge': 'Aufladen',
         'once-per-battle': 'Pro Kampf',
         'other': 'Andere'
@@ -54,6 +58,14 @@ Hooks.once('init', () => {
         'quick': 'Schnell',
         'free': 'Frei',
         'interrupt': 'Unterbrechung'
+    });
+
+    Util.setAllIfExist(CONFIG.ARCHMAGE.actionTypesShort, {
+        'standard': 'STD',
+        'move': 'BEW',
+        'quick': 'SCH',
+        'free': 'FREI',
+        'interrupt': 'UNT'
     });
 
     Util.setAllIfExist(CONFIG.ARCHMAGE.creatureTypes, {
