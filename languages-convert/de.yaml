@@ -57,7 +57,7 @@ ARCHMAGE:
   features: Merkmale
   filter: Filter
   filterName: Filter nach Name
-  #flavor: Flavor
+  flavor: Flavor
   flexible: Flexibler Angriff
   flexibles: Flexible Angriffe
   free: Freie Aktion
@@ -68,16 +68,15 @@ ARCHMAGE:
   iconRelationships: Ikonen-Beziehungen
   import: Kräfte importieren
   incrementalAdvances: Schrittweise Verbesserungen
-  #incrementals: Incrementals
   initAdjustment: Initiative-Anpassung
   initiative: Initiative
   interrupt: Unterbrechungsaktion
   inventory: Inventar
   item: Gegenstand
-  #jabWeaponDice: JAB Weapon Dice
+  jabWeaponDice: STOSS Waffenwürfel
   keyMod: Schlüsselmod.
   keyReduced: Auf {mod} reduziert aufgrund von Schlüsselmodifikator {kmod1}/{kmod2}
-  #kickWeaponDice: KICK Weapon Dice
+  kickWeaponDice: TRITT Waffenwürfel
   kin: Volk
   level: Stufe
   levelFormat: "{level}. Stufe"
@@ -87,9 +86,6 @@ ARCHMAGE:
   maneuver: Manöver
   maneuvers: Manöver
   melee: Nahkampf
-  #meleeAbility: Melee Ability
-  #meleeDamageAbility: Melee Damage Ability
-  #meleeMiss: Melee Miss Dmg.
   meleeWeaponDice: Nahkampfwaffen-Würfel
   misc: Sonst.
   miscellaneous: Sonstige
@@ -110,14 +106,11 @@ ARCHMAGE:
   power: Kraft
   powerName: Kraftname
   powers: Kräfte
-  #punchWeaponDice: PUNCH Weapon Dice
+  punchWeaponDice: SCHLAG Waffenwürfel
   quantity: Menge
   quick: Schnelle Aktion
   race: Volk
   ranged: Fernkampf
-  #rangedAbility: Ranged Ability
-  #rangedDamageAbility: Ranged Damage Ability
-  #rangedMiss: Ranged Miss Dmg.
   rangedWeaponDice: Fernkampfwaffen-Würfel
   rchg: Aufl.
   recharge: Aufladen
@@ -158,7 +151,7 @@ ARCHMAGE:
   sheetNPC: NSC-Bogen
   size: Größe
   sort: Sortieren
-  #specialTraits: Special Traits
+  specialTraits: Spezielle Merkmale
   spell: Zauber
   spells: Zauber
   standard: Standardaktion
@@ -166,8 +159,8 @@ ARCHMAGE:
   talents: Talente
   tempHp: Temp. TP
   tool: Werkzeug
-  #trait: Trait
-  #traits: Traits
+  trait: Merkmal
+  traits: Merkmale
   type: Typ
   uses: Einsätze
   vulnerability: Schwäche
@@ -222,7 +215,6 @@ ARCHMAGE:
     RESOURCES:
       commandPoints: Befehlspunkte
       commandPointsGained: "{points} Befehlspunkte erhalten."
-      #cp: Cmd
       custom1: Eigene Ressource 1
       custom2: Eigene Ressource 2
       custom3: Eigene Ressource 3
@@ -236,11 +228,8 @@ ARCHMAGE:
       ki: Ki
       momentum: Schwung
   CHARACTERFLAGS:
-    improvedIniativeHint: Bonus von +4 auf Initiativwürfe.
-    improvedIniativeName: Verbesserte Initiative
     initiativeAdvHint: Menschliche Volksfähgikeit, 2D20 für Initiative würfeln und den höheren Wert nehmen.
     initiativeAdvName: Bereit zum Kampf
-    #title: Flags
   CHARACTERSETTINGS:
     bg1: Hintergrund 1
     bg2: Hintergrund 2
@@ -461,7 +450,7 @@ ARCHMAGE:
     QuickRest: Kurze Rast
     QuickRestBody: Pro-Kampf-Kräfte auffüllen, würfeln, um aufladbare Kräfte wiederaufzuladen und Erholungen würfeln, um bis zur Hälfte der TP zu heilen.
     QuickRestHP: "{recoveries} gewürfelt, {hp} TP geheilt"
-    #range: Range
+    range: Reichweite
     recharge: Aufladen
     RechargeFail: Aufladen fehlgeschlagen
     RechargeLabel: Wiederaufladen
@@ -474,7 +463,7 @@ ARCHMAGE:
     sequencerRay: Sequencer-Datei (Strahl)
     sequencerSelf: Sequencer-Datei (Selbst)
     sequencerReverse: Sequenz umkehren
-    #special: Special
+    special: Speziell
     spellChain: Kettenzauber
     spellLevel2: Stufe 2 Zauber
     spellLevel3: Stufe 3 Zauber
@@ -493,19 +482,19 @@ ARCHMAGE:
     unambiguousAdvantages: Eindeutige Vorteile
     Use: Benutzen
   TARGETING:
-    #'2': two
-    #'3': three
-    #'4': four
-    #'5': five
-    #'6': six
-    #'7': seven
-    #'8': eight
-    #'9': nine
-    #all: all
-    #crescendoSpecial: You can choose more than one target for this spell, but you take a –2 penalty when attacking two targets, a –3 penalty for three targets, and so on.
-    #each: each
-    #every: every
-    #random: random
+    '2': zwei
+    '3': drei
+    '4': vier
+    '5': fünf
+    '6': sechs
+    '7': sieben
+    '8': acht
+    '9': neun
+    all: alle
+    crescendoSpecial: Du kannst mit diesem Zauber mehr als ein Ziel angreifen, aber du erhältst einen Abzug von -2 beim Angriff gegen zwei Ziele, -3 gegen drei Ziele und so weiter.
+    each: jede
+    every: jede
+    random: zufällig
   SAVE:
     death: Todes-RW.
     disengage: Loslösen
@@ -531,31 +520,31 @@ ARCHMAGE:
       toggle: Effekt umschalten
     StatusAsleep: Schlafend
     StatusBlessed: Gesegnet
-    #StatusBonusDefenses: Bonus Defenses
+    StatusBonusDefenses: +Widerstände
     #StatusBuffed: Buffed
     StatusConfused: Verwirrt
     StatusCursed: Verflucht
     StatusDazed: Benommen
     StatusDead: Tot
     #StatusDebuffed: Debuffed
-    #StatusEmpowered: Empowered
+    StatusEmpowered: Gestärkt
     StatusFear: Furcht
-    #StatusFireShield: Fire Shield
+    StatusFireShield: Feuerschild
     StatusFlying: Fliegend
-    #StatusGrabbed: Grabbed
+    StatusGrabbed: Gepackt
     StatusHampered: Eingeschränkt
-    #StatusHindered: Hindered
+    StatusHindered: Behindert
     StatusHelpless: Hilflos
-    #StatusHidden: Hidden
-    #StatusHolyShield: Holy Shield
-    #StatusIceShield: Ice Shield
+    StatusHidden: Verborgen
+    StatusHolyShield: Heiliger Schild
+    StatusIceShield: Eisschild
     StatusLastGasps: Letzter Atem
-    #StatusMageShield: Mage Shield
-    #StatusOngoingDamage: Ongoing Damage
-    #StatusReducedDefenses: Reduced Defenses
-    #StatusRegen: Regeneration
-    #StatusShining: Radiating Light
-    #StatusShocked: Shocked
+    StatusMageShield: Magieschild
+    StatusOngoingDamage: Anhaltender Schaden
+    StatusReducedDefenses: -Widerstände
+    StatusRegen: Regeneration
+    StatusShining: Strahlendes Licht
+    StatusShocked: Geschockt
     StatusStaggered: Angeschlagen
     StatusStuck: Festsitzend
     StatusStunned: Betäubt
@@ -576,7 +565,7 @@ ARCHMAGE:
     noToken: Keine Spielfigur ausgewählt.
     tooManyLevels: Ein Monster um mehr als 6 Stufen zu ändern wird nicht empfohlen.
     levelLimits: Stufe kann nicht über 15 oder unter 0 gesetzt werden.
-    classChange: Klassenänderung erkannt, Basiswerte angepasst.
+    classChange: "Klassenänderung erkannt, Basiswerte angepasst: {classes}."
   MIGRATIONS:
     start: 'Wende Toolkit13 System-Migration Version {version} an. Bitte das Spiel nicht schließen und den Server nicht beenden...'
     complete: "Toolkit13 System-Migration zu Version {version} beendet!"

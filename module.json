@@ -5,7 +5,8 @@
   "authors": [
     {
       "name": "mhilbrunner",
-      "url": "https://github.com/mhilbrunner"
+      "url": "https://github.com/mhilbrunner",
+      "flags": {}
     }
   ],
   "url": "https://github.com/mhilbrunner/toolkit13-de",
@@ -25,10 +26,10 @@
     {
       "lang": "de",
       "name": "Deutsch",
-      "path": "languages/de.json"
+      "path": "languages/de.json",
+      "flags": {}
     }
   ],
-  "packs": [],
   "relationships": {
     "systems": [
       {
