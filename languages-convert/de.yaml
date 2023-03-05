@@ -673,7 +673,7 @@ ARCHMAGE:
     pcAbility: |
       Attributswerte (oder <b>Attribute</b>) werden während der Charaktererstellung passend zum Charakter verteilt und können bei Erreichen bestimmter Stufen erhöht werden. Der <b>Modifikator</b> (oder <b>Mod</b>) leitet sich aus dem Wert ab. Die Charakterstufe kommt als Bonus hinzu.
     pcAbilitySuffix: |
-      Klicken, um einen <b>Fertigkeitswurf<b> zu würfeln. Optional kann ein <b>Hintergrund</b> und <b>Situativer Bonus</b> im Würfeldialog gewählt werden.
+      Klicken, um einen <b>Fertigkeitswurf</b> zu würfeln. Optional kann ein <b>Hintergrund</b> und <b>Situativer Bonus</b> im Würfeldialog gewählt werden.
     pcAbilitystr: |
       <b>Stärke</b> steht für körperliche Kraft und die Fähigkeit, sie einzusetzen. Sie wird für <b>Nahkampfangriffe und -Schaden</b> (für die meisten Klassen), <b>Fertigkeitswürfe</b> (für Athletik, physische Einschüchterung und anderes) und <b>Körperlichen Widerstand</b> (<b>KW</b>) verwendet. Besonders wichtig für Kämpfer, Barbaren und Paladine.
     pcAbilitycon: |
@@ -723,7 +723,7 @@ ARCHMAGE:
       Trefferpunkte basieren auf Klasse, Konstitutionsmodifikator und Stufe.
       Trefferpunkte sind eine Abstraktion von Gesundheit, Ausdauer und Kampfeswillen. Jede Kreatur verfügt über Trefferpunkte.
       Spielercharaktere (und oft auch Feinde) sind <b>Angeschlagen</b>, wenn sie die Hälfte ihrer Trefferpunkte oder mehr verlieren, wodurch sich einige Kräfte, Zauber, Monsterattacken und andere Dinge ändern.
-      Feinde sterben bei 0 TP (oder werden bewusstlos geschlagen). Spielercharaktere werden <b>Bewusstlos<7b> und können nichts mehr tun, außer <b>Todesrettungswürfe</b> bei Beginn jedes ihrer Züge zu würfeln.
+      Feinde sterben bei 0 TP (oder werden bewusstlos geschlagen). Spielercharaktere werden <b>Bewusstlos</b> und können nichts mehr tun, außer <b>Todesrettungswürfe</b> bei Beginn jedes ihrer Züge zu würfeln.
       Charaktere können <b>negative TP</b> haben, können also auch mit 0 TP noch Schaden nehmen. Wenn die negativen TP die Hälfte der maximalen TP erreichen führt das zum <b>sofortigen Tod</b>. Negative Trefferpunkte werden für Heilung und Erholungen ignoriert, diese zählen immer ab 0.
       Trefferpunkte können durch <b>Erholungen</b>, <b>Tränke</b> und manche Zauber und Kräfte regeneriert werden.
       Eine <b>Volle Erholung</b> füllt die TP aufs Maximum. Bei einem <b>Stufenaufstieg</b> (oder einer <b>Schrittweisen Verbesserung</b>) erhöhen sich die TP um die gleiche Menge, um die sich die maximalen TP erhöhen.
