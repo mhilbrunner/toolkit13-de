@@ -8,7 +8,7 @@ German translation for the Toolkit13 (13th Age compatible) system for Foundry Vi
 
 This module is a third-party effort not affiliated with, sponsored or endorsed by Toolkit13 or 13th Age.
 
-**NOTE:** Compendium content translations is work in progress.
+**NOTE:** Compendium content translation is work in progress.
 
 ## How to install
 
