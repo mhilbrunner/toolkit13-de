@@ -1,6 +1,6 @@
 ACTOR:
   TypeCharacter: Charakter
-  TypeNpc: Monster/NPC
+  TypeNpc: Monster/NSC
 ARCHMAGE:
   abilities: Attribute
   abilityName: Attributsname
@@ -50,7 +50,7 @@ ARCHMAGE:
   defenses: Widerstände
   description: Beschreibung
   details: Details
-  disengageAdjustment: Loslösen-Anpassung
+  disengageAdjustment: Nahkampf-Rückzug-Anpassung
   edit: Edit.
   effects: Effekte
   equipment: Ausrüstung
@@ -197,7 +197,7 @@ ARCHMAGE:
     nightmodeName: Nachtmodus
     rechargeOncePerDayHint: Soll nur bei einer Kurzen Rast versucht werden, Kräfte wiederaufzuladen (ein), oder bei jeder Kurzen Rast (aus)? Defailt ist bei jeder (aus).
     rechargeOncePerDayName: Wiederaufladen nur einmal pro Tag.
-    RoundUpDamageApplicationHint: Wird gleichermaßen für Charaktere und NPCs angewendet.
+    RoundUpDamageApplicationHint: Wird gleichermaßen für Charaktere und NSCs angewendet.
     RoundUpDamageApplicationName: Wenn Schaden oder Heilung über das Kontextmenü angewendet wird, sollen die Zahlen aufgerundet (ein) oder abgerundet (aus) werden? Default ist aufgerundet (ein).
     secondEditionHint: Aktivieren, um die Regeln für den Playtest für die 2. Edition von 13th Age zu verwenden. Ansonsten werden die regulären Regeln verwendet.
     secondEditionName: 2e Playtest Regeln nutzen
@@ -242,7 +242,7 @@ ARCHMAGE:
       recovery: Erholung
       rhythm: Kampfrhythmus
   CHARACTERFLAGS:
-    initiativeAdvHint: Menschliche Volksfähgikeit, 2D20 für Initiative würfeln und den höheren Wert nehmen.
+    initiativeAdvHint: Menschliche Volksfähgikeit, 2d20 für Initiative würfeln und den höheren Wert nehmen.
     initiativeAdvName: Bereit zum Kampf
   CHARACTERSETTINGS:
     bg1: Hintergrund 1
@@ -373,7 +373,7 @@ ARCHMAGE:
     attackBonuses: Angriffsboni
     chakraSlot: Chakra
     defenseBonuses: Verteidigungsboni
-    disengageBonus: Loslösen-Bonus
+    disengageBonus: Nahkampf-Rückzug-Bonus
     divineBonus: Göttliche Zauber / Göttlicher Angriffsbonus
     escalationBlockedHint: Verhindert Nutzung von Eskalationswürfel
     critModBonus: Krit. Treffer Modifikator Bonus
@@ -583,7 +583,7 @@ ARCHMAGE:
     random: zufällig
   SAVE:
     death: Todes-RW.
-    disengage: Loslösen
+    disengage: Nahkampf-Rückzug
     easy: Einfacher Rettungswurf
     easyShort: Einfach
     failure: Misserfolg
@@ -668,6 +668,124 @@ ARCHMAGE:
     '1_19_0': "Toolkit13 1.19.0: Aktualisiere NSC-Initiative, um eine feste Zahl zu nutzen statt sie aufgrund der Stufe zu berechnen."
     '1_24_0': "Toolkit13 1.24.0: Aktualisiere SC-Initiative, um das Verbesserte Initiative Flag zu entfernen."
     '1_25_0': "Toolkit13 1.25.0: Aktualisiere Kräfte-Kostenfeld für die neue Ressourcen-Syntax."
+  TOOLTIP:
+    portrait: Portrait.<br>Klicken zum Bearbeiten (benötigt Rechte).
+    pcAbility: |
+      Attributswerte (oder <b>Attribute</b>) werden während der Charaktererstellung passend zum Charakter verteilt und können bei Erreichen bestimmter Stufen erhöht werden. Der <b>Modifikator</b> (oder <b>Mod</b>) leitet sich aus dem Wert ab. Die Charakterstufe kommt als Bonus hinzu.
+    pcAbilitySuffix: |
+      Klicken, um einen <b>Fertigkeitswurf<b> zu würfeln. Optional kann ein <b>Hintergrund</b> und <b>Situativer Bonus</b> im Würfeldialog gewählt werden.
+    pcAbilitystr: |
+      <b>Stärke</b> steht für körperliche Kraft und die Fähigkeit, sie einzusetzen. Sie wird für <b>Nahkampfangriffe und -Schaden</b> (für die meisten Klassen), <b>Fertigkeitswürfe</b> (für Athletik, physische Einschüchterung und anderes) und <b>Körperlichen Widerstand</b> (<b>KW</b>) verwendet. Besonders wichtig für Kämpfer, Barbaren und Paladine.
+    pcAbilitycon: |
+      <b>Konstitution</b> steht für Zähigkeit und Ausdauer. Sie wird für <b>Trefferpunkte</b>, <b>Rüstungsklasse</b> (<b>RK</b>), <b>Körperlichen Widerstand</b> (<b>KW</b>) und <b>Fertigkeitswürfe</b> (für Dinge, die Zähigkeit und Ausdauer benötigen) verwendet. Wichtig für alle Klassen (außer Nekromanten).
+    pcAbilitydex: |
+      <b>Geschick</b> steht für Hand-Augen-Koordination, Beweglichkeit, Reflexe und Gleichgewicht. Verwendet für <b>Fernkampfangriffe und -Schaden</b> (mit Waffen, bei den meisten Klassen), <b>Rüstungsklasse</b> (<b>RK</b>), <b>Körperlichen Widerstand</b> (<b>KW</b>) und <b>Fertigkeitswürfe</b> (für Schlossknacken, Balancieren, Schleichen und ähnliches). Wichtig für Schurken und fähige Bogenschützen.
+    pcAbilityint: |
+      <b>Intelligenz</b> steht für analytisches und abstraktes Denken und die Fähigkeit, Wissen abzurufen. Verwendet für <b>Geistigen Widerstand</b> (<b>GW</b>), <b>Fertigkeitswürfe</b> und das Zauberwirken mancher Klassen, wie Magier und Nekromanten.
+    pcAbilitywis: |
+      <b>Weisheit</b> steht für Intuition, Einsicht und Wahrnehmungsvermögen. Verwendet für <b>Geistigen Widerstand</b> (<b>GW</b>), <b>Rüstungsklasse</b> (<b>RK</b>), <b>Fertigkeitswürfe</b> (etwa, um die Motivation eines NSCs festzustellen, Verwundete zu heilen oder einen Verbündeten zu <b>stabilisieren</b>) und für das Zauberwirken mancher Klassen, wie Klerikern und Druiden.
+    pcAbilitycha: |
+      <b>Charisma</b> steht für Ausstrahlung und Persönlichkeitsstärke. Verwendet für <b>Geistigen Widerstand</b> (<b>GW</b>), <b>Fertigkeitswürfe</b> (etwa um zu Bluffen, Leute zu beeinflussen oder einzuschüchtern oder mit Tieren umzugehen), Zauberwirken mancher Klassen (wie Zauberer) und Paladin-Klassenmerkmale.
+    pcBackground: |
+      {desc}
+      Hintergründe repräsentieren ein Stück der Geschichte und Erfahrung eines Charakters.
+      Es ist hilfreich, Hintergründe allgemein genug zu halten, dass sie mehrere Fähigkeiten abdecken, und spezifisch genug, um den Charakter mit der Welt zu verbinden: einer Region, Fraktion, einem Volk oder Ziel.
+      Die Charakterbogen-Optionen können genutzt werden, um ungenutzte Hintergründe zu entfernen oder weitere hinzuzufügen.
+      Auf den Würfel klicken, um einen Hintergrundwurf basierend auf diesem Hintergrund zu würfeln. <b>Attribut</b> und optional <b>Situativer Bonus</b> können im Würfeldialog festgelegt werden.
+    pcClass: |
+      Klasse(n) des Charakters (z.B. "Kämpfer")
+      Legt Dinge wie verfügbare Talente, Kräfte, Fähigkeiten und Basiswerte fest. Gewährt außerdem einen Bonus von <b>+2</b> auf einen Attributswert.
+      Die Basiswerte werden automatisch angepasst, wenn dieses Feld bearbeitet wird. Damit das funktioniert, muss die Schreibweise genau passen.
+      Ob der Charakter einen Schild, eine Zweihandwaffe oder zwei Waffen führt, kann in den Charakterbogen-Optionen festgelegt werden.
+      Für eigene Klassen müssen die Charakterbogeneinstellungen manuell gesetzt werden. Foundry-Module können weitere Klassen hinzufügen.
+      Fürs Multiclassing können mehrere Klassennamen eingegeben werden, z.B. "Kämpfer/Barbar". Die Schlüsselmodifikatoren müssen eventuell in den Charakterbogeneinstellungen angepasst werden.
+    pcDeathSaves: |
+      Sterbende Spielercharaktere (mit 0 TP oder weniger) müssen <b>Todesrettungswürfe</b> bei Beginn jedes ihrer Züge ablegen und können sonst keine Aktionen ausführen.
+      Todesrettungswürfe sind <b>Schwer</b> (16+). Bei Erfolg kann eine Erholung genutzt werden, um das Bewusstsein zurückzuerlangen und TP zu regenerieren. Bei einer natürlichen 20 kann außerdem der Zug normal genutzt werden.
+      Bei einer 15 oder niedriger rückt das Grab näher. Nach dem <b>vierten</b> Fehlschlag im selben Kampf <b>stirbt</b> der Charakter.
+      Der Charakter stirbt ebenfalls, wenn seine negativen TP die Hälfte seiner maximalen TP erreichen, oder wenn der <b>Letzte Atem</b> ausgeht.
+      Ein sterbender CHarakter kann mit einem SG 10 Weisheitswurf zur Heilung als <b>Standardaktion</b> <b>stabilisiert</b> werden. Bei Fehlschlag ist die Aktion verschwendet. Bei 25+ wird sie stattdessen eine <b>Schnelle Aktion</b>.
+      Einem sterbenden Charakter einen <b>Heiltrank</b> einzuflößen, holt ihn auf die Beine zurück, kostet aber eine <b>Standardaktion</b>.
+      Todesrettungswürfe werden erst <b>nach dem Kampf</b> zurückgesetzt (Foundry erledigt das bei einer <b>Kurzen Rast</b>).
+    pcDefenses: |
+      <b>Rüstungsklasse</b> (<b>RK</b>) basiert auf dem mittleren Wert von <b>Stärke</b>, <b>Geschick</b> oder <b>Weisheit</b>. Schützt vor Waffenangriffen im Nah- und Fernkampf.
+      <b>Körperlicher Widerstand</b> (<b>KW</b>) basiert auf dem mittleren Wert von <b>Stärke</b>, <b>Konstitution</b> oder <b>Geschick</b>. Schützt vor anderen physischen Angriffen, wie vielen Zaubern.
+      <b>Geistiger Widerstand</b> (<b>GW</b>) basiert auf dem mittleren Wert von <b>Intelligenz</b>, <b>Weisheit</b> oder <b>Charisma</b>. Schützt vor mentalen Angriffen, wie vielen Zaubern.
+      Effekte oder Angriffe müssen diese Werte <b>erreichen oder übertreffen</b>.
+      Die Werte werden von Klasse, relevantem Attribut und Charakterstufe bestimmt.
+    pcEngagement: |
+      Im Kampf sind alle entweder <b>im Nahkampf</b> oder <b>nicht im Nahkampf</b> (<b>frei</b>).
+      <b>Freie</b> Charaktere können sich frei bewegen, Fernkampfangriffe nutzen etc. Wenn sie versuchen, einen <b>freien</b> Feind zu passieren, kann dieser sie normalerweise abfangen (wodurch beide in den <b>Nahkampf</b> wechseln und die Bewegung unterbrochen wird). Freie Charaktere können keine Nahkampfangriffe oder -Zauber nutzen, bis sie in den Nahkampf wechseln.
+      <b>Im Nahkampf</b> befindliche Charaktere kämpfen mit einem oder mehreren Feinden aus nächster Nähe. Sie können Nahkampfangriffe und -Zauber gegen diese nutzen. Sie können Fernkampfangriffe und -Zauber nutzen, provizieren aber Gelegenheitsangriffe von <b>allen</b> Feinden, die mit ihnen im Nahkampf und <i>nicht</b> Ziel dieses Angriffs oder Zauber sind.
+      <b>Gelegenheitsangriffe</b> sind einzelne, einfache Nahkampfangriffe, die als freie Aktion durchgeführt werden.
+      Eine <b>Bewegungsaktion</b> kann für <b>Nahkampf-Rückzug</b> genutzt werden. Das erfordert einen <b>Normalen</b> (11+) Rettungswurf. Bei Erfolg kann sich der Charakter lösen und frei bewegen, ohne Gelegenheitsangriffe zu provozieren. Bei einem Fehlschlag kann er sich nicht bewegen, verliert die Bewegungsaktion und bleibt im Nahkampf, provoziert aber auch keinen Gelegenehitsangriff.
+    pcHitpoints: |
+      Trefferpunkte basieren auf Klasse, Konstitutionsmodifikator und Stufe.
+      Trefferpunkte sind eine Abstraktion von Gesundheit, Ausdauer und Kampfeswillen. Jede Kreatur verfügt über Trefferpunkte.
+      Spielercharaktere (und oft auch Feinde) sind <b>Angeschlagen</b>, wenn sie die Hälfte ihrer Trefferpunkte oder mehr verlieren, wodurch sich einige Kräfte, Zauber, Monsterattacken und andere Dinge ändern.
+      Feinde sterben bei 0 TP (oder werden bewusstlos geschlagen). Spielercharaktere werden <b>Bewusstlos<7b> und können nichts mehr tun, außer <b>Todesrettungswürfe</b> bei Beginn jedes ihrer Züge zu würfeln.
+      Charaktere können <b>negative TP</b> haben, können also auch mit 0 TP noch Schaden nehmen. Wenn die negativen TP die Hälfte der maximalen TP erreichen führt das zum <b>sofortigen Tod</b>. Negative Trefferpunkte werden für Heilung und Erholungen ignoriert, diese zählen immer ab 0.
+      Trefferpunkte können durch <b>Erholungen</b>, <b>Tränke</b> und manche Zauber und Kräfte regeneriert werden.
+      Eine <b>Volle Erholung</b> füllt die TP aufs Maximum. Bei einem <b>Stufenaufstieg</b> (oder einer <b>Schrittweisen Verbesserung</b>) erhöhen sich die TP um die gleiche Menge, um die sich die maximalen TP erhöhen.
+      <b>Temporäre Trefferpunkte</b> 
+      <b>Temporary Hit Points</b> sind nicht stapelbar und werden vor normalen TP verbraucht. Sie werden auf 0 zurückgesetzt, wenn Initiative gewürfelt wird und nach jedem Kampf.
+    pcIconRelationship: |
+      Ikonen sind die wichtigsten bekannten NSCs in der Kampagne und ihre Fraktionen.
+      Die Beziehung des Charakters zu manchen dieser Ikonen (ob <i>positiv</i>, <i>negativ</i> oder <i>zwiespältig</i>) wird im Spiel manchmal zu <b>Vorteilen</b> führen (die manchmal <b>Komplikationen</b> haben).
+      Anklicken, um Ikonenwürfel zu würfeln, einen pro Beziehungspunkt. Für jeden Punkt zeigt Foundry ein kleines Symbol, das per Klick zwischen verbraucht (oder leer), <b>5</b> (<b>Vorteil mit Komplikation</b>) und <b>6</b> (<b>Eindeutiger Vorteil</b>) umgeschaltet werden kann.
+    pcInitiative: |
+      Initiative ist ein d20-Wurf, mit <b>Geschick</b>-Modifikator und Charakterstufe als Boni.
+      Im Kampf handeln Kämpfer in Initiativreihenfolge, die <b>einmal</b> zu Beginn des Kampfes festgelegt wird.
+      Kämpfer können ihren Zug <b>Verzögern</b>, nicht handeln und sich entscheiden, bei welcher Initiative sie wieder einsteigen und handeln. Dadurch senken sie freiwillig ihren Initiativwert für den Rest des Kampfes.
+      Klicken, um Initiative zu würfeln (kann nur verwendet werden, wenn eine Begegnung in Foundry erstellt wurde).
+    pcLastGaspSaves: |
+      Manche Effekte erlauben <b>Letzter Atem</b>-Rettungswürfe, statt einen Charakter sofort zu betreffen (oder zu töten).
+      Im ersten Zug unter <b>Letztem Atem</b> kann ein Charakter noch eine Aktion (eine <b>Standardaktion</b>, <b>Schnelle Aktion</b> oder Bewegung) durchführen. Danach muss er einen <b>Schweren</b> (16+) Rettungswurf ablegen und ist bei einem Fehlschlag <b>Hilflos</b> und kann keine Aktione durchführen, außer weiteren <b>Letzter Atem</b>-Würfen.
+      Wie bei <b>Todesrettungswürfen</b> muss der Charakter nun zu Beginn jedes seiner Züge einen weiteren <b>Schweren</b> (16+) Rettungswurf ablegen. Ein einzelner Erfolg reicht und der Charakter beendet den Zustand und kann ab dem nächsten Zug normal handeln, während er bei einer natürlichen 20 sogar im selben Zug normal handeln kann.
+      Nach <b>vier</b> fehlgeschlagenen <b>Letzter Atem</b>-Würfen tritt der Effekt voll ein und verwandelt den Charakter in Stein, verflüssigt ihn oder was auch immer der Effekt war.
+      Ein Verbündeter neben dem Charakter kann eine <b>Standardaktion</b> nutzen, um ihm zu helfen, den Effekt abzuschütteln, was ihm jeweils einen zusätzlichen Wurf erlaubt, dessen Fehlschlag nicht zählt und der außerdem nur ein <b>Normaler</b> (11+) Rettungswurf ist.
+    pcName: |
+      Name des Charakters (z.B. "Helen")
+      Setting, Lore und Hintergrund und Herkunft des Charakters sind gute Inspirationsquellen.
+      Trägt der Charakter einen Titel dank eines Hintergrundes?<br>Hat er einen witzigen Spitznamen?</b>Vielleicht ist der Charakter eines anderen Spielers mit ihm verwandt und sie teilen einen Nachnamen?
+      Es ist in der Regel gut, erkennbare Namen aus dem wirklichen Leben und anderen Medien zu vermeiden.
+      Beispiele:<br><i>Borgin der Barbar</i><br><i>Bree "Apfel" Stolzfass</i><br><i>Shemra</i><br><i>Sir Richard Hohenheim</i>
+    pcLevel: |
+      Stufe des Charakters (von <b>1</b> bis <b>10</b>)
+      Charaktere skalieren stark mit der Stufe. Beispielsweise erhöht jede Stufe <b>Angriffsbonus</b>, Zahl der <b>Schadenswürfel</b>, <b>Fertigkeitswürfe</b>, <b>Trefferpunkte</b>, <b>Widerstände</b>, <b>Initiative</b> und die Zahl der <b>Erholungswürfel</b> (aber nicht der <b>Erholungen</b>).
+      Stufen sind in drei Bereiche unterteilt:<br>Stufen 1 bis 4 <b>Abenteurer</b><br>Stufen 5 bis 7 <b>Held</b><br>Stufen 8 bis 10 <b>Episch</b>
+      Bei Erreichen eines neuen Stufenbereichs skalieren Charaktere noch stärker, neue Optionen (wie <b>Helden</b>- oder <b>Epische Fähigkeiten</b>) stehen bereit und die Bedrohungen der Geschichte werden oft ebenso gefährlicher und weitreichender.
+    pcRace: Volk des Charakters (z.B. "Zwerg")
+    pcRaceV2: Volk des Charakters (z.B. "Zwerg")
+    pcRaceDesc: |
+      Gewährt einen Bonus von <b>+2</b> auf ein Attribut. Nicht mit dem Bonus von der Klasse stapelbar.
+      Gewährt eventuell weitere Kräfte.
+      Die Wahl beschränkt in der Regel nicht die Klassenauswahl.
+      Häufige Völker sind oft <i>Mensch</i>, <i>Zwerg</i>, <i>Elf</i>, <i>Gnom</i>, <i>Halbelf</i>, <i>Halbork</i> und <i>Halbling</i>.
+      Weitere Optionen und mehrere Abstammungen können mit dem GM besprochen werden.
+    pcRecoveries: |
+      Erholungen regenerieren <b>Trefferpunkte</b>.
+      Viele Kräfte, Zauber und Tränke gewähren die Nutzung von Erholungen. Manche gewährten <b>Freie Erholungen</b>, die keine Erholungen verbrauchen.
+      Spielercharaktere können als <b>Standardaktion Durchschnaufen</b> und <b>eine Erholung</b> nutzen, um Trefferpunkte zurückzuerlangen. Jedes weitere Durchschnaufen im selben Kampf erfordert einen <b>Normalen</b> Rettungswurf (11+). Bei einem Fehlschlag bleibt die Aktion erhalten, aber der Charakter kann in dem Zug nicht durchschnaufen.
+      Während einer <b>Kurzen Rast</b> können eine beliebige Zahl verfügbare Erholungen genutzt werden. <b>Angeschlagene</b> Charaktere <b>müssen</b> versuchen, sich mit Erholungen, Zaubern oder anderen Mitteln zu heilen.
+      Für die Nutzung einer Erholung wird ein Erholungswürfel pro Stufe gewürfelt und am Ende der Konstitutionsmodifikator auf das Ergebnis addiert, was die Anzahl der regenrierten TP bestimmt (der Konstitutionsbonus wird auf <b>Helden</b>-Stufen verdoppelt, auf <b>Epischen</b> verdreifacht).
+      Die Größe des Erholungswürfels und die Zahl der Erholungen hängt von der Klasse ab und kann über Talente und Fähigkeiten verbessert werden.
+      Wenn ein Charakter eine Aktion nutzt oder von etwas betroffen ist, was die Nutzung einer Erholung erfordert, obwohl er über keine mehr verfügt, erhält er durch die Erholung halb so viele TP und erleidet einen stapelbaren -1 Malus auf alle Widerstände und Angriffe bis zur nächsten <b>Vollen Erholung</b>. Dies wird in Foundry durch <b>negative Erholugnen</b> unterstützt (die Zahl verbleibender Erholungen kann auf negative Werte gesetzt werden.)
+      Eine <b>Volle Erholung</b> setzt die Zahl verfügbarer Erholungen zurück.
+    pcRestQuick: |
+      Charaktere können nach jedem Kampf eine Kurze Rast nutzen.
+      Dabei können sie eine beliebige Anzahl ihrer verbliebenen Erholungen nutzen, um sich zu heilen.
+      <b>Angeschlagene</b> CHaraktere (halbe TP oder weniger) <b>müssen</b> versuchen, sich mit Erholungen, Zaubern oder anderen Mitteln zu heilen.
+      Für jede wiederaufladbare Kraft, die im letzten Kampf verwendet wurde, würfeln Charaktere (einen d20, der den Wiederaufladen-Wurf erreichen oder übertreffen muss).
+      Foundry würfelt die Wiederaufladen-Würfe (und Erholungen für angeschlagene Charaktere) automatisch.
+    pcRestFull: |
+      Nach jeweils ungefähr vier Kämpfen folgt eine <b>Volle Erholung</b>.
+      <b>Trefferpunkte</b> werden aufs Maximum gesetzt.<br>Alle genutzten <b>Erholungen</b> werden zurückerlangt.<br>Alle genutzten Kräfte werden zurückerlangt oder wiederaufgeladen.<br>Dies ist die Zeit für einen Stufenaufstieg, wenn einer verdient wurde!
+    pcSaves: |
+      Rettungswürfe sind ein d20-Wurf ohne Standardmodifikatoren gegen einen Schwierigkeitsgrad (SG) der erreicht oder übertroffen werden muss.
+      Sie werden für alles von der Wiederaufladung von Kräften über Würfe gegen Effekte bis hin zu Todesrettungswürfen genutzt.
+      Es gibt drei Schiwerigkeitsgrade für Rettungswürfe, wenn einer keinen SG angibt, ist es ein <b>Normaler</b> Rettungswurf:<br><b>Einfach</b> (6+)<br><b>Normal</b> (11+)<br><b>Schwer</b> (16+)
+      Es gibt keine Standardmodifikatoren oder Boni auf Rettungswürfe, aber manche Talente, Fähigkeiten und Gegenständen gewähren solche Boni.
 # Tours
   TOURS:
     # '170':
