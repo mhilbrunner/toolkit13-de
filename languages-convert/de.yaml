@@ -1,3 +1,6 @@
+ACTOR:
+  TypeCharacter: Charakter
+  TypeNpc: Monster/NPC
 ARCHMAGE:
   abilities: Attribute
   abilityName: Attributsname
@@ -38,7 +41,9 @@ ARCHMAGE:
   contextApplyDamageDouble: Als doppelten Schaden
   contextApplyDamageTriple: Als dreifachen Schaden
   contextApplyHealing: Als Heilung
+  contextApplyHealingHalf: Als halbe Heilung
   contextApplyTempHealth: Als temporäre Trefferpunkte
+  cost: Kosten
   critModAtk: Krit.-Modifikator (Angriff)
   critModDef: Krit.-Modifikator (Verteidigung)
   daily: Täglich
@@ -67,6 +72,7 @@ ARCHMAGE:
   hitPoints: Trefferpunkte
   iconRelationships: Ikonen-Beziehungen
   import: Kräfte importieren
+  importSubmit: Importieren
   incrementalAdvances: Schrittweise Verbesserungen
   initAdjustment: Initiative-Anpassung
   initiative: Initiative
@@ -98,6 +104,7 @@ ARCHMAGE:
   nastierSpecials: Fiesere Spezialfähigkeiten
   negative: Negativ
   newItem: Neue {item}
+  noneOption: "- Keine(r) -"
   once-per-battle: Pro Kampf
   oneUniqueThing: Einzigartiges Merkmal
   other: Andere
@@ -143,6 +150,7 @@ ARCHMAGE:
   rollFormula: Formel
   rollMode: Würfelmodus
   rollNormal: Normal
+  save: Rettungswurf
   saves: Rettungswurf
   sheetActiveEffect: Toolkit13 Aktiver Effekt Bogen
   sharePlayers: Spielern zeigen
@@ -151,12 +159,12 @@ ARCHMAGE:
   sheetNPC: NSC-Bogen
   size: Größe
   sort: Sortieren
-  specialTraits: Spezielle Merkmale
   spell: Zauber
   spells: Zauber
   standard: Standardaktion
   talent: Talent
   talents: Talente
+  terrains: Umgebung
   tempHp: Temp. TP
   tool: Werkzeug
   trait: Merkmal
@@ -166,46 +174,48 @@ ARCHMAGE:
   vulnerability: Schwäche
   # Settings
   SETTINGS:
-    #automateBaseStatsFromClassHint: Automatically populate AC, PD, MD, base HP, Recovery and Weapon dices based on class name(s).
-    #automateBaseStatsFromClassName: Automatically compute base stats
-    #automateHPConditionsHint: If enabled, the Staggered and Dead conditions will be automatically applied and removed after hp changes; Disable this if you are using custom conditions via modules such as Combat Utility Belt - it is implicitly disabled if that module is active.
-    #automateHPConditionsName: Auto-manage Dead and Staggered
-    #automatePowerCostHint: Remove resources (e.g. Command Points, Ki or Focus) automatically when using a power with a cost?
-    #automatePowerCostName: Automatically apply power costs
-    #ColorblindHint: Change the colors of the power cards to more accessibility color palette.
-    #ColorblindName: Enable Colorblind Accessibility Mode
-    #ColorblindOptioncolorBlindBY: Tritanopia (Blue/Yellow)
-    #ColorblindOptioncolorBlindRG: Protanopla / Deutanopla (Red/Green)
-    #ColorblindOptionDefault: Default Colors
-    #extendedStatusEffectsHint: If enabled extends the official status list with a handful of useful token markers.
-    #extendedStatusEffectsName: Extended Status Effects List
-    #hideExtraRollsHint: If enabled, powers with multiple attack rolls will display at most one attack per targeted token if any is targeted.
-    #hideExtraRollsName: Limit extra rolls to targeted tokens
-    #hideInsteadOfOpaqueHint: Enable this if you prefer not seeing inactive details at all.
-    #hideInsteadOfOpaqueName: Hide inactive Features / Triggers instead of making them faded-out
-    #initiativeDexTiebreakerHint: If enabled initiative ties will be resolved using the initiative modifier; if not, monsters win by default.
-    #initiativeDexTiebreakerName: Initiative Modifier as Tiebreaker
-    #multiTargetAttackRollsHint: Enable this to automatically duplicate inline attack rolls for multi-target powers based on the number of targets.
-    #multiTargetAttackRollsName: Multi-Target Attack Rolls
-    #rechargeOncePerDayHint: Attempt to recharge powers on quick rests only once (true) or re-attempt after every quick rest (false)?
-    #rechargeOncePerDayName: Recharge once per day only
-    #RoundUpDamageApplicationHint: This will be applied the same way for both characters and npcs
-    #RoundUpDamageApplicationName: When applying damage via the right-click context menu, should it round up (true) or round down (false)?
-    #secondEditionHint: Turn this on to use the 13th Age second edition playtest rules, off if you'd prefer the regular rules.
-    #secondEditionName: Use 2e Playtest Rules
-    #ShowDebugLogsHint: Turn this on for bug reports
-    #ShowDebugLogsName: Show debug logs?
-    #showDefensesInChatHint: Enable this display a list of targeted defenses in the attack line of chat power cards.
-    #showDefensesInChatName: Show target(s) defense(s) in chat
-    #staggeredOverlayHint: If enabled the staggered condition will be automatically applied as a token overlay instead of a normal condition.
-    #staggeredOverlayName: Staggered as overlay
-    #tourVisibilityAll: Everyone can see tours
-    #tourVisibilityGM: Only the GM can see tours
-    #tourVisibilityHint: When new versions of Toolkit13 are released, the system will display a tour of the changes. Use this setting to determine who should see the tours (or if they should be disabled).
-    #tourVisibilityName: Features tour visibility
-    #tourVisibilityOff: Tours are disabled
-    #UnboundEscDieHint: Enable this setting to let the escalation die go above 6 and below 0 when manually adjusted (still remains limited when counting by the current round).
-    #UnboundEscDieName: Unlimited Escalation Die
+    automateBaseStatsFromClassHint: Bestimmt RK, KW, GW, Basis-TP, Erholungs- und Waffenwürfel anhand der Klassenname(n).
+    automateBaseStatsFromClassName: Basiswerte automatisch berechnen
+    automateHPConditionsHint: Verteilt und entfernt die Zustände Tot/Bewusstlos und Angeschlagen automatisch bei TP-Veränderungen. Deaktivieren, falls Module wie Combat Utility Belt verwendet werden. Wird implizit deaktiviert, wenn das CUB-Modul aktiv ist.
+    automateHPConditionsName: Tot/Bewusstlos und Angeschlagen automatisch verwalten
+    ColorblindHint: Ändert die Farben für Kräfte-Karten für bessere Zugänglichkeit.
+    ColorblindName: Farbzugänglichkeitsmodus aktivieren
+    ColorblindOptioncolorBlindBY: Tritanopia (Blau/Gelb)
+    ColorblindOptioncolorBlindRG: Protanopla / Deutanopla (Rot/Grün)
+    ColorblindOptionDefault: Standardfarben
+    extendedStatusEffectsHint: Wenn aktiviert, wird die offizielle Zustandsliste um einige nützliche Spielfiguren-Marker erweitert.
+    extendedStatusEffectsName: Erweiterte Zustandsliste
+    hideExtraRollsHint: Wenn aktiviert, werden für Kräfte mit mehreren Zielen maximal so viele Würfe ausgeführt, wie der Spieler Ziele anvisiert bzw. ausgewählt hat, wenn er mindestens eins anvisiert hat.
+    hideExtraRollsName: Zusätzliche Würfe auf anvisierte Ziele begrenzen
+    hideInsteadOfOpaqueHint: Aktivieren, um inaktive Details komplett auszublenden, statt sie auszugrauen.
+    hideInsteadOfOpaqueName: Inaktive Merkmale / Trigger ausblenden
+    initiativeDexTiebreakerHint: Wenn aktiviert, werden Gleichstände bei der Initiative durch den Initiative-Modifikator entschieden, ansonsten gewinnen standardmäßig die Monster.
+    initiativeDexTiebreakerName: Initiative-Modifikator als Tiebreaker
+    multiTargetAttackRollsHint: Aktivieren, um eingebettete Angriffswürfe für Kräfte mit mehreren Zielen automatisch je nach Anzahl der Ziele mehrfach zu würfeln.
+    multiTargetAttackRollsName: Angriffswürfe gegen mehrere Ziele
+    nightmodeHint: Kehrt die Farben der Charakterbögen in einen abgedunkelten Nachtmodus um.
+    nightmodeName: Nachtmodus
+    rechargeOncePerDayHint: Soll nur bei einer Kurzen Rast versucht werden, Kräfte wiederaufzuladen (ein), oder bei jeder Kurzen Rast (aus)? Defailt ist bei jeder (aus).
+    rechargeOncePerDayName: Wiederaufladen nur einmal pro Tag.
+    RoundUpDamageApplicationHint: Wird gleichermaßen für Charaktere und NPCs angewendet.
+    RoundUpDamageApplicationName: Wenn Schaden oder Heilung über das Kontextmenü angewendet wird, sollen die Zahlen aufgerundet (ein) oder abgerundet (aus) werden? Default ist aufgerundet (ein).
+    secondEditionHint: Aktivieren, um die Regeln für den Playtest für die 2. Edition von 13th Age zu verwenden. Ansonsten werden die regulären Regeln verwendet.
+    secondEditionName: 2e Playtest Regeln nutzen
+    ShowDebugLogsHint: Für Bug Reports aktivieren
+    ShowDebugLogsName: Debug-Logs anzeigen?
+    showDefensesInChatHint: Wenn aktiv werden die Widerstände der anvisierten Ziele in Chatkarten aufgelistet. 
+    showDefensesInChatName: Zeige Ziel-Widerstände im Chat
+    staggeredOverlayHint: Wenn aktiviert, wird der Angeschlagen-Zustand als Overlay statt als normaler Zustand gesetzt.
+    staggeredOverlayName: Angeschlagen als Overlay
+    sheetTooltipsHint: Aktiviert Tooltips für Charakterbögen, die beim Drüberfahren mit der Maus hilfreiche Regelauszüge und Tips anzeigen. Am Hilfreichsten beim Erlernen des Systems oder für den GM. Clientseitige Einstellung.
+    sheetTooltipsName: Charakterbogen-Tooltips
+    tourVisibilityAll: Jeder kann Touren sehen
+    tourVisibilityGM: Nur der GM kann Touren sehen
+    tourVisibilityHint: Updates des Systems zeigen neue Funktionen durch Touren. Diese Einstellung bestimmt, wer Zugang zu diesen Touren hat (oder ob sie deaktiviert sind).
+    tourVisibilityName: Touren-Sichtbarkeit
+    tourVisibilityOff: Touren sind deaktiviert
+    UnboundEscDieHint: Wenn aktiviert kann der Eskalationswürfel manuell über 6 und unter 0 gesetzt werden (bleibt aber weiter innerhalb dieser Grenzen, wenn er sich automatisch durch Kampfrunden ändert).
+    UnboundEscDieName: Unbegrenzter Eskalationswürfel
   AUTOLEVEL:
     confirm: Speichern (neue Kopie)
     help: Dieses Formular kann genutzt werden, um eine Kopie dieses Akteurs mit auf die neue Stufe angepassten Werten (inklusive Angriffen) zu erzeugen.
@@ -213,6 +223,7 @@ ARCHMAGE:
   # Characters
   CHARACTER:
     RESOURCES:
+      commandPoint: Befehlspunkt
       commandPoints: Befehlspunkte
       commandPointsGained: "{points} Befehlspunkte erhalten."
       custom1: Eigene Ressource 1
@@ -227,6 +238,9 @@ ARCHMAGE:
       focus: Fokus
       ki: Ki
       momentum: Schwung
+      recoveries: Erholungen
+      recovery: Erholung
+      rhythm: Kampfrhythmus
   CHARACTERFLAGS:
     initiativeAdvHint: Menschliche Volksfähgikeit, 2D20 für Initiative würfeln und den höheren Wert nehmen.
     initiativeAdvName: Bereit zum Kampf
@@ -372,36 +386,57 @@ ARCHMAGE:
     meleeBonus: Nahkampfangriffsbonus
     pdBonus: KW-Bonus
     price: Preis
+    pricePlaceholder: 1.000 GM
+    quantity: Menge
     rangedBonus: Fernkampfangriffsbonus
     recoveriesBonus: Erholungen-Bonus
     saveBonus: Rettungswurf-Bonus
+    saveBonusHPTreshold: Rettungswurf-Bonus TP-Grenzwert
+    usesMax: Maximale Nutzungen
+    usesMaxHint: Anzahl Nutzungen pro Kampf/Volle Erholung, normal 1
+    usesRemaining: Nutzungen verbleibend
+    usesRemainingHint: Zahl verbleibender Nutzungen, entspricht normal Maximalen Nutzungen
   CHAKRA:
     armor: Rüstung, Robe, Hemd, Tunika
-    armorBonus: "Default Bonus: Armor Class"
+    armorBonus: "Standardbonus: Rüstungsklasse"
     arrow: Pfeil, Bolzen, Schleuderstein
     belt: Gürtel, Schwertscheide, Kilt, Rock
-    beltBonus: "Default Bonus: Recoveries"
+    beltBonus: "Standardbonus: Erholungen"
     book: Buch, Schriftrolle, Manuskript, Zauberbuch
     boots: Stiefel, Sandale, Schuh, Slipper
+    bootsBonus: "Standardbonus: Loslösen-Würfe"
     cloak: Umhang, Mantel, Cape
+    cloakBonus: "Standardbonus: Körperlicher Widerstand"
     glove: Handschuh, Panzerhandschuh, Fäustling
     helmet: Helm, Diadem, Krone, Kappe
+    helmetBonus: "Standardbonus: Geistiger Widerstand"
     melee: Waffe, Nahkampf
     necklace: Halskette, Amulett
+    necklaceBonus: "Standardbonus: Rettungswürfe"
     none: Keins
+    noBonus: Kein Standardbonus, kommt auf Gegenstand an
     ranged: Waffe, Fernkampf
     ring: Ring
     shield: Schild
+    shieldBonus: "Standardbonus: Trefferpunkte"
     staff: Stab (Ritualgegenstand)
+    staffBonus: "Wirkt wie Zauberstab und Symbol in einem"
     symbol: Symbol, Reliquie, heilige Sichel (Ritualgegenstand)
+    symbolBonus: "Standardbonus: Göttliche Angriffe und Schaden"
     wand: Zauberstab (Ritualgegenstand)
+    wandBonus: "Standardbonus: Arkane Angriffe und Schaden"
+    weaponBonus: "Standardbonus: Angriffe und Schaden"
     wondrous: Wundersamer Gegenstand
   CHAT:
     actionType: Aktionstyp
     adventurer: Abenteurer-Fähigkeit
     adventurerDescription: Beschreibung der Abenteurer-Fähigkeit
     always: Immer
+    alwaysPlaceholder: Ein Effekt, der immer eintritt
+    alwaysTitle: Effekte die immer eintreten, ungeachtet der Umstände oder Würfe
     attack: Angriff
+    attackPlaceholder: "[[d20+@str.mod+@lvl+@ed]] vs. RK"
+    attackTitle: Angriffsformel, z.B. "[[d20+@str.mod+@lvl+@ed]] vs. RK"
     breathWeapon: Odemwaffe
     Cancel: Abbrechen
     castBroadEffect: Auf mehrere Ziele
@@ -410,52 +445,76 @@ ARCHMAGE:
     championDescription: Beschreibung der Helden-Fähigkeit
     CmdPtsReset: Auf 1 setzen
     complicatedAdvantages: Vorteile mit Komplikation
-    cost: Kosten
     crit: Krit
+    critPlaceholder: Zusätzliche Effekte bei einem Krit
     Delete: Löschen
     DeleteConfirm: Sicher, dass das gelöscht werden soll?
+    DeleteConfirmTitle: Löschen bestätigen
     effect: Effekt
     epic: Epische Fähigkeit
     epicDescription: Beschreibung der Epischen Fähigkeit
+    even: gerade
     finalVerse: Schlussvers
     FullHeal: Volle Erholung
     FullHealBody: Füllt alle Trefferpunkte, Erholungen und Kraft-Einsätze auf.
     FullHealHP: Auf Maximum gesetzt
     group: Gruppe
     hit: Treffer
+    hitPlaceholder: "[[@wpn.m.dice+@str.dmg]] Schaden"
+    hitTitle: Effekte bei erfolgreichem Treffer, z.B. "[[@wpn.m.dice+@str.dmg]] Schaden"
     hit1: Spezieller Treffer (1)
     hit2: Spezieller Treffer (2)
     hit3: Spezieller Treffer (3)
     hitEven: Gerader Treffer
+    hitEvenTitle: Effekte bei geraden Treffern
     hitOdd: Ungerader Treffer
+    hitOddTitle: Effekte bei ungeraden Treffern
     HP: TP
     ItemReset: Einsätze aufgefüllt auf
     KiReset: Aufgefüllt auf
     embeddedMacro: Eingebettetes Makro
     embeddedMacroSummary: Eingebettetes Makro bearbeiten. Wird bei Benutzung ausgeführt.
+    embeddedMacroSummaryTooltip: Das Makro wird ausgeführt, wenn das Item genutzt/gewürfelt wird. Kontext steht als Parameter zur Verfügung.
     embeddedMacroPermissionError: Kann eingebettetes Makro nicht ausführen - GM muss diesem Nutzer Rechte gewähren!
     miss: Fehlschlag
+    missPlaceholder: Schaden gleich deiner Stufe ([[@lvl]])
+    missTitle: Effekte bei einem Fehlschlag, z.B. "Schaden gleich deiner Stufe ([[@lvl]])"
     missEven: Gerader Fehlschlag
+    missEvenPlaceholder: Effekte bei geraden Fehlschlägen
     missOdd: Ungerader Fehlschlag
+    missOddPlaceholder: Effekte bei ungeraden Fehlschlägen
     MomentReset: verloren
+    natural: natürliche
     NoResources: Nicht genug Ressourcen
     NoUses: Keine Einsätze mehr
     NoUsesMsg: Keine Einsätze übrig. Trotzdem benutzen?
+    numbersOnly: Nur Zahlen, z.B. '16'
+    odd: ungerade
     powerLevel: Stufe
     powerSource: Kraftquellentyp
+    powerSourcePlaceholder: Magier
+    powerSourceTitle: Die Quelle dieser Kraft (z.B. Magier).
+    powerSourceTypeTitle: Der Typ der Quelle, von der diese Kraft stammt.
     powerSourceName: Kraftquellenname
     powerOriginName: Ursprünglicher Name
+    powerOriginNamePlaceholder: Feuerball
+    powerOriginTitle: Ursprünglicher Name, falls aus irgendeinem Grund angepasst (z.B. für das Magiertalent Polysyllabische Verbalisierungen).
     powerType: Krafttyp
     powerUsage: Krafteinsätze
     QuickRest: Kurze Rast
     QuickRestBody: Pro-Kampf-Kräfte auffüllen, würfeln, um aufladbare Kräfte wiederaufzuladen und Erholungen würfeln, um bis zur Hälfte der TP zu heilen.
     QuickRestHP: "{recoveries} gewürfelt, {hp} TP geheilt"
     range: Reichweite
+    rangePlaceholder: Nahkampf oder Fernkampf
+    rangeTitle: Reichweite der Kraft, wie 'Nahkampf' oder 'Fernkampf'
     recharge: Aufladen
+    rechargeHint: Nur die Zahl, wie '16' (Wiederaufladen bei Würfen von 16+)
     RechargeFail: Aufladen fehlgeschlagen
     RechargeLabel: Wiederaufladen
     RechargeRoll: Wiederaufladen-Wurf
     RechargeSucc: Aufgeladen
+    resources: Ressourcen
+    resourcesPlaceholder: -2 Befehlspunkte
     Rest: Rasten
     Rests: Rasten
     sequencerDesc: Sequencer-Animation konfigurieren.
@@ -466,21 +525,48 @@ ARCHMAGE:
     special: Speziell
     spellChain: Kettenzauber
     spellLevel2: Stufe 2 Zauber
+    spellLevel2Placeholder: "[[2d6]] Schaden"
     spellLevel3: Stufe 3 Zauber
+    spellLevel3Placeholder: "[[3d6]] Schaden"
     spellLevel4: Stufe 4 Zauber
+    spellLevel4Placeholder: "[[4d6]] Schaden"
     spellLevel5: Stufe 5 Zauber
+    spellLevel5Placeholder: "[[5d6]] Schaden"
     spellLevel6: Stufe 6 Zauber
+    spellLevel6Placeholder: "[[6d6]] Schaden"
     spellLevel7: Stufe 7 Zauber
+    spellLevel7Placeholder: "[[7d6]] Schaden"
     spellLevel8: Stufe 8 Zauber
+    spellLevel8Placeholder: "[[8d6]] Schaden"
     spellLevel9: Stufe 9 Zauber
+    spellLevel9Placeholder: "[[9d6]] Schaden"
     spellLevel10: Stufe 10 Zauber
+    spellLevel10Placeholder: "[[10d6]] Schaden"
     rollTable: Würfeltabelle
-    #sustainedEffect: Opening and Sustained Effect
-    #sustainOn: Sustain On
+    rollTablePlaceholder: Hinterhältiger Angriff
+    rollTableTitle: Name einer Würfeltabelle, auf die bei Nutzung gewürfelt wird (nur Text)
+    sustainedEffect: Unmittelbarer und fortgeführter Effekt
+    sustainOn: Fortführen bei
+    sustainOnTitle: Nur Zahlen, z.B. '16' (wird bei einem Wurf von 16+ fortgeführt)
     target: Ziel
+    targetPlaceholder: "[[1d3]] nahe Feinde"
+    targetTitle: Ziele für diese Kraft, z.B. "[[1d3]] nahe Feinde"; bestimmt, wie viele Angriffe gewürfelt werden
     trigger: Auslöser
+    triggerPlaceholder: Natürlicher gerader Fehlschlag
+    triggerTitle: Auslöser für diese Kraft, z.B. 'Natürlicher gerader Fehlschlag'
     unambiguousAdvantages: Eindeutige Vorteile
     Use: Benutzen
+  TERRAINS:
+    label: Vorhandene Umgebungen
+    none: Keine
+    caveDungeonUnderworld: Höhle, Gewölbe, Unterwelt
+    forestWoods: Wald
+    iceTundraDeepSnow: Eis, Tundra, Tiefschnee
+    migration: Koru-Riesengeschöpf
+    mountains: Gebirge, Berge
+    plainsOverworld: Ebenen, Überwelt
+    ruins: Ruinen
+    swampLakeRiver: Sumpf, See, Fluss
   TARGETING:
     '2': zwei
     '3': drei
@@ -552,16 +638,19 @@ ARCHMAGE:
     StatusVulnerable: Anfällig
     StatusWeakened: Geschwächt
   UI:
+    errMacroSyntax: Fehler in Makro-Syntax. Sehe Konsole (F12) für Details.
     errNotEnoughCP: Nicht genug Befehlspunkte, um diesen Befehl zu nutzen. Trotzdem nutzen?
     errNotEnoughKi: Nicht genug Ki, um diese Kraft zu nutzen. Trotzdem nutzen?
     errNoMomentum: Nicht den nötigen Schwung, um diese Kraft zu nutzen. Trotzdem nutzen?
     errNoFocus: Nicht den nötigen Fokus, um diese Kraft zu nutzen. Trotzdem nutzen?
-    errNoCustomResource: Nicht genug
-    errNoCustomResource2: Trotzdem nutzen?
+    errNoRecoveries: Keine Erholungen mehr. Trotzdem nutzen?
+    errNoRhythm: Kraft benötigt Kampfrhythmus. Trotzdem nutzen?
+    errNoCustomResource: "Du hast nicht genug {res}. Trotzdem nutzen?"
     errNotInteger: muss eine ganze Zahl sein
-    errDependency: Die Module <strong>vueport</strong> und <strong>dlopen</strong> werden für den V2-Charakterbogen benötigt. Nachdem sie über die Foundry-Setupseite installiert wurden, steht der V2-Charakterbogen zur Auswahl.
-    enableDependencies: Abhängigkeiten aktivieren?
-    dependencyContent: Der V2-Charakterbogen benötigt die Module VuePort und dlopen. Sollen diese jetzt aktiviert werden?
+    errOnlyTextRolltables: Nur Text-Würfeltabellen werden aktuell unterstützt.
+    warnMacroOnlyOwnedItems: Kann nur Makros Items im Besitz erstellen.
+    warnMacroItemNotFound: Konnte {item} nicht finden. Makro muss eventuell gelöscht und neu erstellt werden.
+    warnMacroItemNotOnActor: Kontrollierter Akteur verfügt über kein Item namens {item}.
     noToken: Keine Spielfigur ausgewählt.
     tooManyLevels: Ein Monster um mehr als 6 Stufen zu ändern wird nicht empfohlen.
     levelLimits: Stufe kann nicht über 15 oder unter 0 gesetzt werden.
@@ -570,11 +659,15 @@ ARCHMAGE:
     start: 'Wende Toolkit13 System-Migration Version {version} an. Bitte das Spiel nicht schließen und den Server nicht beenden...'
     complete: "Toolkit13 System-Migration zu Version {version} beendet!"
     updateActors: 'Aktualisiere Welt-Akteure'
+    updateCompendiums: 'Aktualisiere Welt-Kompendien'
+    updateItems: 'Aktualisiere Welt-Items'
     updateTokens: 'Aktualisiere Welt-Spielfiguren'
     updateCompendiumActors: 'Aktualisiere Kompendium-Akteure: {pack}'
+    updateCompendiumItems: 'Aktualisiere Kompendium-Items: {pack}'
     updateCompendiumScenes: 'Aktualisiere Kompendium-Szenen: {pack}'
     '1_19_0': "Toolkit13 1.19.0: Aktualisiere NSC-Initiative, um eine feste Zahl zu nutzen statt sie aufgrund der Stufe zu berechnen."
     '1_24_0': "Toolkit13 1.24.0: Aktualisiere SC-Initiative, um das Verbesserte Initiative Flag zu entfernen."
+    '1_25_0': "Toolkit13 1.25.0: Aktualisiere Kräfte-Kostenfeld für die neue Ressourcen-Syntax."
 # Tours
   TOURS:
     # '170':
@@ -642,3 +735,11 @@ ARCHMAGE:
     #     settings: As with the character sheet, settings have been moved into their own tab. This currently only includes visual information such as the avatar settings and the ability to switch the NPC sheet to night mode, but we'll likely expand this in the future with additional settings!
     #   compendiums: |
     #     <strong>SRD Monster Compendiums</strong> have been updated to include inline rolls for <em>most</em> use cases. There have been a few outliers that slipped through the cracks, but virtually every monster in the SRD compendium was updated to have inline rolls added for their targeting lines and their damage. This only applies to monsters in the compendium.
+ITEM:
+  TypeAction: Aktion
+  TypeLoot: Beute
+  TypeEquipment: Magischer Gegenstand
+  TypeNastierspecial: Fiesere Spezialfähigkeit
+  TypePower: Kraft
+  TypeTool: Werkzeug
+  TypeTrait: Merkmal
