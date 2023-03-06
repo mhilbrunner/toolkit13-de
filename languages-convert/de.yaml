@@ -46,7 +46,7 @@ ARCHMAGE:
   cost: Kosten
   critModAtk: Krit.-Modifikator (Angriff)
   critModDef: Krit.-Modifikator (Verteidigung)
-  daily: Täglich
+  daily: Volle Erholung
   defenses: Widerstände
   description: Beschreibung
   details: Details
@@ -716,9 +716,9 @@ ARCHMAGE:
     pcEngagement: |
       Im Kampf sind alle entweder <b>im Nahkampf</b> oder <b>nicht im Nahkampf</b> (<b>frei</b>).
       <b>Freie</b> Charaktere können sich frei bewegen, Fernkampfangriffe nutzen etc. Wenn sie versuchen, einen <b>freien</b> Feind zu passieren, kann dieser sie normalerweise abfangen (wodurch beide in den <b>Nahkampf</b> wechseln und die Bewegung unterbrochen wird). Freie Charaktere können keine Nahkampfangriffe oder -Zauber nutzen, bis sie in den Nahkampf wechseln.
-      <b>Im Nahkampf</b> befindliche Charaktere kämpfen mit einem oder mehreren Feinden aus nächster Nähe. Sie können Nahkampfangriffe und -Zauber gegen diese nutzen. Sie können Fernkampfangriffe und -Zauber nutzen, provizieren aber Gelegenheitsangriffe von <b>allen</b> Feinden, die mit ihnen im Nahkampf und <i>nicht</b> Ziel dieses Angriffs oder Zauber sind.
+      <b>Im Nahkampf</b> befindliche Charaktere kämpfen mit einem oder mehreren Feinden aus nächster Nähe. Sie können Nahkampfangriffe und -Zauber gegen diese nutzen. Sie können Fernkampfangriffe und -Zauber nutzen, provozieren aber Gelegenheitsangriffe von <b>allen</b> Feinden, die mit ihnen im Nahkampf und <i>nicht</i> Ziel dieses Angriffs oder Zauber sind.
       <b>Gelegenheitsangriffe</b> sind einzelne, einfache Nahkampfangriffe, die als freie Aktion durchgeführt werden.
-      Eine <b>Bewegungsaktion</b> kann für <b>Nahkampf-Rückzug</b> genutzt werden. Das erfordert einen <b>Normalen</b> (11+) Rettungswurf. Bei Erfolg kann sich der Charakter lösen und frei bewegen, ohne Gelegenheitsangriffe zu provozieren. Bei einem Fehlschlag kann er sich nicht bewegen, verliert die Bewegungsaktion und bleibt im Nahkampf, provoziert aber auch keinen Gelegenehitsangriff.
+      Eine <b>Bewegungsaktion</b> kann für <b>Nahkampf-Rückzug</b> genutzt werden. Das erfordert einen <b>Normalen</b> (11+) Rettungswurf. Bei Erfolg kann sich der Charakter lösen und frei bewegen, ohne Gelegenheitsangriffe zu provozieren. Bei einem Fehlschlag kann er sich nicht bewegen, verliert die Bewegungsaktion und bleibt im Nahkampf, provoziert aber auch keinen Gelegenheitsangriff.
     pcHitpoints: |
       Trefferpunkte basieren auf Klasse, Konstitutionsmodifikator und Stufe.
       Trefferpunkte sind eine Abstraktion von Gesundheit, Ausdauer und Kampfeswillen. Jede Kreatur verfügt über Trefferpunkte.
@@ -776,7 +776,7 @@ ARCHMAGE:
       Charaktere können nach jedem Kampf eine Kurze Rast nutzen.
       Dabei können sie eine beliebige Anzahl ihrer verbliebenen Erholungen nutzen, um sich zu heilen.
       <b>Angeschlagene</b> CHaraktere (halbe TP oder weniger) <b>müssen</b> versuchen, sich mit Erholungen, Zaubern oder anderen Mitteln zu heilen.
-      Für jede wiederaufladbare Kraft, die im letzten Kampf verwendet wurde, würfeln Charaktere (einen d20, der den Wiederaufladen-Wurf erreichen oder übertreffen muss).
+      Für jede wiederaufladbare Kraft, die im letzten Kampf verwendet wurde, würfeln Charaktere einen d20, der den Wiederaufladen-Wurf erreichen oder übertreffen muss.
       Foundry würfelt die Wiederaufladen-Würfe (und Erholungen für angeschlagene Charaktere) automatisch.
     pcRestFull: |
       Nach jeweils ungefähr vier Kämpfen folgt eine <b>Volle Erholung</b>.

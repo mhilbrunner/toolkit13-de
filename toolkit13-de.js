@@ -41,12 +41,12 @@ Hooks.once('ready', () => {
         'at-will': 'Beliebig',
         'once-per-battle': 'Pro Kampf',
         'recharge': 'Aufladen',
-        'daily': 'Volle Erholung',
+        'daily': 'Pro Volle Erholung',
         'other': 'Andere'
     });
 
     Util.setAllIfExist(CONFIG.ARCHMAGE.equipUsages, {
-        'daily': 'Volle Erholung',
+        'daily': 'Pro Volle Erholung',
         'recharge': 'Aufladen',
         'once-per-battle': 'Pro Kampf',
         'other': 'Andere'
