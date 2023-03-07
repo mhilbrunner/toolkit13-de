@@ -765,7 +765,7 @@ ARCHMAGE:
       Weitere Optionen und mehrere Abstammungen können mit dem GM besprochen werden.
     pcRecoveries: |
       Erholungen regenerieren <b>Trefferpunkte</b>.
-      Viele Kräfte, Zauber und Tränke gewähren die Nutzung von Erholungen. Manche gewährten <b>Freie Erholungen</b>, die keine Erholungen verbrauchen.
+      Viele Kräfte, Zauber und Tränke gewähren die Nutzung von Erholungen. Manche gewähren <b>Freie Erholungen</b>, die keine Erholungen verbrauchen.
       Spielercharaktere können als <b>Standardaktion Durchschnaufen</b> und <b>eine Erholung</b> nutzen, um Trefferpunkte zurückzuerlangen. Jedes weitere Durchschnaufen im selben Kampf erfordert einen <b>Normalen</b> Rettungswurf (11+). Bei einem Fehlschlag bleibt die Aktion erhalten, aber der Charakter kann in dem Zug nicht durchschnaufen.
       Während einer <b>Kurzen Rast</b> können eine beliebige Zahl verfügbare Erholungen genutzt werden. <b>Angeschlagene</b> Charaktere <b>müssen</b> versuchen, sich mit Erholungen, Zaubern oder anderen Mitteln zu heilen.
       Für die Nutzung einer Erholung wird ein Erholungswürfel pro Stufe gewürfelt und am Ende der Konstitutionsmodifikator auf das Ergebnis addiert, was die Anzahl der regenrierten TP bestimmt (der Konstitutionsbonus wird auf <b>Helden</b>-Stufen verdoppelt, auf <b>Epischen</b> verdreifacht).
