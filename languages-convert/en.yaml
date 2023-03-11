@@ -1,6 +1,6 @@
 ACTOR:
   TypeCharacter: Character
-  TypeNpc: Non-player Character (NPC)
+  TypeNpc: Monster/NPC
 ARCHMAGE:
   abilities: Abilities
   abilityName: Ability Name
@@ -13,6 +13,7 @@ ARCHMAGE:
   attack: Attack
   attackMod: Attack Modifier
   attributes: Attributes
+  arcane: Arcane
   avatarAlt: Character profile image
   background: Background
   backgrounds: Backgrounds
@@ -43,14 +44,16 @@ ARCHMAGE:
   contextApplyHealing: Apply as Healing
   contextApplyHealingHalf: Apply as Half Healing
   contextApplyTempHealth: Apply as Temp Health
-  cost: Cost
   critModAtk: Crit Modifier (Attack)
   critModDef: Crit Modifier (Defense)
   daily: Daily
   defenses: Defenses
   description: Description
   details: Details
+  disengage: Disengage
+  disengageShort: Disengage
   disengageAdjustment: Disengage Adjustment
+  divine: Divine
   edit: Edit
   effects: Effects
   equipment: Equipment
@@ -153,7 +156,7 @@ ARCHMAGE:
   save: Save
   saves: Saves
   sharePlayers: Show Players
-  sheetActiveEffect: Toolkit13 Active Effect Sheet
+  sheetActiveEffect: 13th Age Active Effect Sheet
   sheetCharacter: Character Sheet
   sheetItem: Item Sheet
   sheetNPC: NPC Sheet
@@ -310,6 +313,10 @@ ARCHMAGE:
     platinumHint: 1 Platinum = 10 Gold
     silver: Silver
     silverHint: 1 Silver = 10 Copper
+  DIALOG:
+    CUP:
+      title: 13th Age Community Use Policy
+      content: "This system for Foundry VTT uses trademarks and/or copyrights owned by Fire Opal Media Inc., which are used under the Fire Opal Media Inc., 13th Age Community Use Policy. We are expressly prohibited from charging you to use or access this content. This system for Foundry VTT is not published, endorsed, or specifically approved by Fire Opal Media."
   PREPOPULATE:
     help: "Click the checkboxes to the left of any powers you would like to add, and then click submit to add them to your character. You can click any power's name to expand it and view its text and available feats."
 # Ability Scores
@@ -403,34 +410,51 @@ ARCHMAGE:
   CHAKRA:
     armor: Armor, robe, shirt, tunic
     armorBonus: "Default Bonus: Armor Class"
+    armorLabel: Armor
     arrow: Arrow, crossbow bolt, slingstone
+    arrowLabel: Arrow
     belt: Belt, swordbelt, kilt, girdle
     beltBonus: "Default Bonus: Recoveries"
+    beltLabel: Belt
     book: Book, scroll, manual, grimoire
+    bookLabel: Book
     boots: Boots, sandals, slippers, shoes
     bootsBonus: "Default Bonus: Disengage Checks"
+    bootsLabel: Boots
     cloak: Cloak, mantle, cape
     cloakBonus: "Default Bonus: Physical Defense"
+    cloakLabel: Cloak
     glove: Glove, gauntlet, mitt
+    gloveLabel: Glove
     helmet: Helmet, circlet, crown, cap
     helmetBonus: "Default Bonus: Mental Defense"
+    helmetLabel: Helmet
     melee: Weapon, melee
+    meleeLabel: Melee
     necklace: Necklace, pendant
     necklaceBonus: "Default Bonus: Save bonus"
+    necklaceLabel: Neck
     none: None
     noBonus: No default bonus, depends on the item
     ranged: Weapon, ranged
+    rangedLabel: Ranged
     ring: Ring
+    ringLabel: Ring
     shield: Shield
     shieldBonus: "Default Bonus: Hit points"
+    shieldLabel: Shield
     staff: Staff (implement)
     staffBonus: "Operates as both a Wand and a Symbol"
+    staffLabel: Staff
     symbol: Symbol, holy relic, sacred sickle (implement)
     symbolBonus: "Default Bonus: Divine Attack and Damage"
+    symbolLabel: Symbol
     wand: Wand (implement)
     wandBonus: "Default Bonus: Arcane Attack and Damage"
+    wandLabel: Wand
     weaponBonus: "Default Bonus: Attack and Damage"
     wondrous: Wondrous item
+    wondrousLabel: Wondrous
   CHAT:
     actionType: Action Type
     adventurer: Adventurer Feat
@@ -439,8 +463,8 @@ ARCHMAGE:
     alwaysPlaceholder: Some effect that always happens
     alwaysTitle: Effects that always happen, regardless of circumstances or rolls
     attack: Attack
-    attackPlaceholder: "[[d20+@str.mod+@lvl+@ed]] vs. AC"
-    attackTitle: Attack formula, such as "[[d20+@str.mod+@lvl+@ed]] vs. AC"
+    attackPlaceholder: "[[d20+@str.mod+@std]] vs. AC"
+    attackTitle: Attack formula, such as "[[d20+@str.mod+@std]] vs. AC"
     breathWeapon: Breath Weapon
     Cancel: Cancel
     castBroadEffect: Cast for Broad Effect
@@ -509,8 +533,8 @@ ARCHMAGE:
     QuickRestBody: Regain per-battle powers, roll to recharge spent recharge powers, and roll recoveries to heal above 50% health.
     QuickRestHP: rolled {recoveries} healing {hp} HP
     range: Range
-    rangePlaceholder: Melee or Ranged
-    rangeTitle: Range of the power, such as 'Melee' or 'Ranged'
+    rangePlaceholder: Melee attack or Ranged spell
+    rangeTitle: Range of the power, such as 'Meele attack' or 'Ranged spell'
     recharge: Recharge
     rechargeHint: Numbers only, such as '16' (recharges on a roll of 16+)
     RechargeFail: recharge failed
@@ -559,6 +583,7 @@ ARCHMAGE:
     trigger: Trigger
     triggerPlaceholder: Natural even miss
     triggerTitle: Trigger for this power, such as 'Natural even miss'
+    triggerVsRegex: "(\\[\\[.+?\\]\\]).*(vs.*)"
     unambiguousAdvantages: Unambiguous Advantages
     Use: Use
   TERRAINS:
@@ -567,7 +592,7 @@ ARCHMAGE:
     caveDungeonUnderworld: Cave, Dungeon, Underworld
     forestWoods: Forest, Woods
     iceTundraDeepSnow: Ice, Tundra, Deep Snow
-    migration: Migration Route (large herd animal)
+    migration: Koru Behemoth
     mountains: Mountains
     plainsOverworld: Plains, Overworld
     ruins: Ruins
@@ -652,6 +677,7 @@ ARCHMAGE:
     errNoRhythm: You need to enter your Combat Rhythm to use this power. Use anyway?
     errNoCustomResource: "You don't have enough {res}. Use anyway?"
     errNotInteger: must be an integer number
+    errNoInitiativeOutsideCombat: Can't roll initiative without an encounter in the combat tracker.
     errOnlyTextRolltables: Only text Roll Tables are supported for now.
     warnMacroOnlyOwnedItems: You can only create macro buttons for owned Items.
     warnMacroItemNotFound: Could not find item {item}. You may need to delete and recreate this macro.
@@ -780,7 +806,7 @@ ARCHMAGE:
       After each battle, you can use a quick rest.
       You can choose to heal yourself using as many recoveries as you have available.
       If you are <b>Staggered</b> (at half <b>Hit Points</b> or below) you <b>must</b> try to heal yourself, either with a recovery, a spell or by other means.
-      For each recharge power you used in the last battle, roll to see if you recharge the power (roll a d20, meet or beat the recharge value). Otherwise, it is recharged after the next battle.
+      For each recharge power you used in the last battle, roll to see if you recharge the power (roll a d20, meet or beat the recharge value).
       Foundry automatically rolls power recharge rolls and recoveries when staggered upon clicking Quick Rest.
     pcRestFull: |
       After about four battles, you earned a full heal-up.
