@@ -61,7 +61,7 @@ Hooks.once('ready', () => {
     });
 
     Util.setAllIfExist(CONFIG.ARCHMAGE.actionTypesShort, {
-        'standard': 'STD',
+        'standard': 'AKT',
         'move': 'BEW',
         'quick': 'SCH',
         'free': 'FREI',
