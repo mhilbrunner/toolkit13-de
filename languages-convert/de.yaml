@@ -751,7 +751,7 @@ ARCHMAGE:
       Trefferpunkte können durch <b>Erholungen</b>, <b>Tränke</b> und manche Zauber und Kräfte regeneriert werden.
       Eine <b>Volle Erholung</b> füllt die TP aufs Maximum. Bei einem <b>Stufenaufstieg</b> (oder einer <b>Schrittweisen Verbesserung</b>) erhöhen sich die TP um die gleiche Menge, um die sich die maximalen TP erhöhen.
       <b>Temporäre Trefferpunkte</b> 
-      <b>Temporary Hit Points</b> sind nicht stapelbar und werden vor normalen TP verbraucht. Sie werden auf 0 zurückgesetzt, wenn Initiative gewürfelt wird und nach jedem Kampf.
+      <b>Temporäre Trefferpunkte</b> sind nicht stapelbar und werden vor normalen TP verbraucht. Sie werden auf 0 zurückgesetzt, wenn Initiative gewürfelt wird und nach jedem Kampf.
     pcIconRelationship: |
       Ikonen sind die wichtigsten bekannten NSCs in der Kampagne und ihre Fraktionen.
       Die Beziehung des Charakters zu manchen dieser Ikonen (ob <i>positiv</i>, <i>negativ</i> oder <i>zwiespältig</i>) wird im Spiel manchmal zu <b>Vorteilen</b> führen (die manchmal <b>Komplikationen</b> haben).
