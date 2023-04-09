@@ -17,7 +17,7 @@ Hooks.once('ready', () => {
         }
     });
 
-    if (game.i18n.lang !== 'de') {
+    if (game.i18n.lang !== 'de' || !CONFIG.ARCHMAGE) {
       return;
     }
 

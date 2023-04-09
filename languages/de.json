@@ -177,7 +177,7 @@
     "traits": "Merkmale",
     "type": "Typ",
     "uses": "Einsätze",
-    "vulnerability": "Schwäche",
+    "vulnerability": "Anfällig",
     "SETTINGS": {
       "automateBaseStatsFromClassHint": "Bestimmt RK, KW, GW, Basis-TP, Erholungs- und Waffenwürfel anhand der Klassenname(n).",
       "automateBaseStatsFromClassName": "Basiswerte automatisch berechnen",
